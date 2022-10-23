@@ -34,7 +34,7 @@ public class ShootScript : MonoBehaviour
     }
     void Shoot()
     {
-       GameObject BulletIns = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
+        GameObject BulletIns = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
         BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.right * BulletSpeed);
         Destroy(BulletIns,1);
     }
