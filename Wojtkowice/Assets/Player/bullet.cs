@@ -17,7 +17,11 @@ public class bullet : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D hitinfo)
     {
-        Debug.Log(hitinfo.name);
+        enemy enemy = hitinfo.GetComponent<enemy>();
+        if(enemy != null)
+        {
+            enemy.TakeDamage(2);
+        }
         Destroy(gameObject);
     }
 }
