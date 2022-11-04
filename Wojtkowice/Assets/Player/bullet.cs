@@ -17,10 +17,10 @@ public class bullet : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D hitinfo)
     {
-        enemy enemy = hitinfo.GetComponent<enemy>();
-        if(enemy != null)
+        EnemyDie EnemyDie = hitinfo.GetComponent<EnemyDie>();
+        if(EnemyDie != null)
         {
-            enemy.TakeDamage(2);
+            EnemyDie.TakeDamage(2);
         }
         Destroy(gameObject);
     }
