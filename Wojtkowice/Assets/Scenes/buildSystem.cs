@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System; 
 
 public class buildSystem : MonoBehaviour
 {
@@ -8,21 +9,41 @@ public class buildSystem : MonoBehaviour
     private Block currentBlock;
     private GameObject blockTemplate;
     private SpriteRenderer currentRend;
+    private Rigidbody2D currentRigid; 
     [SerializeField]
     private LayerMask solidNoBuildLayer;
     [SerializeField]
     private LayerMask backingNoBuildLayer;
-
+    private string[,,,] RoomsLUDP = new string[,,,]
+    {
+        {
+            {
+                {"block", "Dungon101_Tileset_4_solid"}, {"block", "Dungon101_Tileset_4_solid"}, {"block", "Dungon101_Tileset_4_solid"}
+            },
+            {
+                {"block", "Dungon101_Tileset_4_solid"}, {"null", ""}, {"block", "Dungon101_Tileset_4_solid"}
+            },
+            {
+                {"block", "Dungon101_Tileset_4_solid"}, {"block", "Dungon101_Tileset_4_solid"}, {"block", "Dungon101_Tileset_4_solid"}
+            }
+        }
+    }; 
     private void Awake()
     {
         blockSys = GetComponent<blockSystem>();
-        Creating("Dungon101_Tileset_5_solid", -3, -3);
-        Creating("Dungon101_Tileset_4_solid", -2, -2);
-        Creating("Dungon101_Tileset_6_solid", -1, 1);
-        Creating("Dungon101_Tileset_5_solid", 2, 4);
+        for(int x = 0; x < 3; x++)
+        {
+            for(int y = 0; y < 3; y++)
+            {
+                if (RoomsLUDP[0, x, y, 0] == "block")
+                {
+                    Creating(RoomsLUDP[0, x, y, 1], x, y); 
+                }
+            }
+        }
     }
 
-    private void Creating(string id, float x, float y)
+    private void Creating(string id, double x, double y)
     {
         for(int i = 0; i < blockSys.allBlocks.Length; i++)
         {
@@ -35,16 +56,14 @@ public class buildSystem : MonoBehaviour
         blockTemplate = new GameObject("CurrentBlockTemplate");
         currentRend = blockTemplate.AddComponent<SpriteRenderer>();
         currentRend.sprite = currentBlock.sprite;
-        blockTemplate.transform.position = new Vector2(x, y);
-        int layer; 
+        blockTemplate.transform.position = new Vector2((float)Math.Round(x), (float)Math.Round(y));
         if(currentBlock.isSolid)
         {
-            layer = LayerMask.NameToLayer("Solid Block");
+            blockTemplate.AddComponent<BoxCollider2D>();
+            currentRigid = blockTemplate.AddComponent<Rigidbody2D>();
+            currentRigid.gravityScale = 0;
+            currentRigid.mass = 100000;
+            currentRigid.collisionDetectionMode = CollisionDetectionMode2D.Continuous; 
         }
-        else
-        {
-            layer = LayerMask.NameToLayer("Backing Block");
-        }
-        blockTemplate.layer = layer;
     }
 }

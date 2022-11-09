@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         health = maxHealth;
-        healthBar.SetHealth(maxHealth);
+        //healthBar.SetHealth(maxHealth);
     }
 
     //how much damage the player takes 
