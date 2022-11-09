@@ -28,6 +28,6 @@ public class PlayerHealth : MonoBehaviour
     public void GetHealth()
     {
         health +=5;
-        healthBar.SetHealth(health);
+        //healthBar.SetHealth(health);
     }
 }

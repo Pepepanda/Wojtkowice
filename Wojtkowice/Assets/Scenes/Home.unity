@@ -236,7 +236,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249128685}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 1, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -471,13 +471,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   solidBlocks:
+  - {fileID: -1060144889, guid: e15b6e6abbaee0d4a8101607ceb45b8f, type: 3}
+  - {fileID: 50494334, guid: e15b6e6abbaee0d4a8101607ceb45b8f, type: 3}
+  - {fileID: 1478128718, guid: e15b6e6abbaee0d4a8101607ceb45b8f, type: 3}
+  - {fileID: 512030824, guid: e15b6e6abbaee0d4a8101607ceb45b8f, type: 3}
   - {fileID: -1913496828, guid: e15b6e6abbaee0d4a8101607ceb45b8f, type: 3}
   - {fileID: -2004376923, guid: e15b6e6abbaee0d4a8101607ceb45b8f, type: 3}
   - {fileID: -1749675768, guid: e15b6e6abbaee0d4a8101607ceb45b8f, type: 3}
+  - {fileID: -2038384616, guid: e15b6e6abbaee0d4a8101607ceb45b8f, type: 3}
+  - {fileID: -343820588, guid: e15b6e6abbaee0d4a8101607ceb45b8f, type: 3}
+  - {fileID: -1886352994, guid: e15b6e6abbaee0d4a8101607ceb45b8f, type: 3}
+  - {fileID: 1925054116, guid: e15b6e6abbaee0d4a8101607ceb45b8f, type: 3}
+  - {fileID: 165889380, guid: e15b6e6abbaee0d4a8101607ceb45b8f, type: 3}
   solidNames:
+  - Dungon101_Tileset_0_solid
+  - Dungon101_Tileset_1_solid
+  - Dungon101_Tileset_2_solid
+  - Dungon101_Tileset_3_solid
   - Dungon101_Tileset_4_solid
   - Dungon101_Tileset_5_solid
   - Dungon101_Tileset_6_solid
+  - Dungon101_Tileset_7_solid
+  - Dungon101_Tileset_8_solid
+  - Dungon101_Tileset_9_solid
+  - Dungon101_Tileset_10_solid
+  - Dungon101_Tileset_11_solid
   backingBlocks: []
   backingNames: []
 --- !u!114 &1171503896

@@ -34,7 +34,7 @@ public class ShootScript : MonoBehaviour
             {
                 Shoot();
                 ammo--;
-                ammoBar.SetAmmo(ammo);
+                //ammoBar.SetAmmo(ammo);
             }
         }
     }
