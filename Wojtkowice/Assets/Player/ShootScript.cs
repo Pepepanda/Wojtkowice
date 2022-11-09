@@ -11,10 +11,15 @@ public class ShootScript : MonoBehaviour
     public GameObject Bullet;
     public float BulletSpeed;
     private Vector2 direction;
+    public int maxAmmo = 20;
+    public int ammo;
+    public AmmoBar ammoBar;
     // Start is called before the first frame update
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        ammo = maxAmmo;
+        ammoBar.SetAmmo(ammo);
     }
 
     // Update is called once per frame
@@ -25,7 +30,12 @@ public class ShootScript : MonoBehaviour
         FaceMouse();
         if (Input.GetMouseButtonDown(0))
         {
-            Shoot();
+            if (ammo != 0)
+            {
+                Shoot();
+                ammo--;
+                ammoBar.SetAmmo(ammo);
+            }
         }
     }
     void FaceMouse()
@@ -37,5 +47,14 @@ public class ShootScript : MonoBehaviour
         GameObject BulletIns = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
         BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.right * BulletSpeed);
         Destroy(BulletIns,1);
+    }
+    public void SetAmmo(int NewAmmo)
+    {
+        ammo = NewAmmo;
+    }
+    public void GetAmmo()
+    {
+        ammo = maxAmmo;
+        ammoBar.SetAmmo(ammo);
     }
 }
