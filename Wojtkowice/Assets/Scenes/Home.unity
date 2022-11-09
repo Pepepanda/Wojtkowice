@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 249128688}
   - component: {fileID: 249128687}
   - component: {fileID: 249128686}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249128685}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -250,7 +250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 678237778}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1005141864}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1005411507}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1148739874}
   - component: {fileID: 1148739875}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,9 +471,9 @@ MonoBehaviour:
   - {fileID: -2004376923, guid: e15b6e6abbaee0d4a8101607ceb45b8f, type: 3}
   - {fileID: -1749675768, guid: e15b6e6abbaee0d4a8101607ceb45b8f, type: 3}
   solidNames:
-  - 1
-  - 2
-  - 3
+  - Dungon101_Tileset_4_solid
+  - Dungon101_Tileset_5_solid
+  - Dungon101_Tileset_6_solid
   backingBlocks: []
   backingNames: []
 --- !u!114 &1171503896
@@ -488,6 +488,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2931cac2fd14b24fbe4dd4f34d48df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  solidNoBuildLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  backingNoBuildLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1287763002
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +701,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1789978192}
   - component: {fileID: 1789978193}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,7 +784,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1841750976}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
