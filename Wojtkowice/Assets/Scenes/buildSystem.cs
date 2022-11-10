@@ -14,7 +14,7 @@ public class buildSystem : MonoBehaviour
     private LayerMask solidNoBuildLayer;
     [SerializeField]
     private LayerMask backingNoBuildLayer;
-    private string[,,,] RoomsLUDP = new string[,,,]
+    private string[,,,] RoomsLUDR = new string[,,,]
     {
         {
             {
@@ -4548,9 +4548,9 @@ public class buildSystem : MonoBehaviour
         {
             for(int y = 0; y < 39; y++)
             {
-                if (RoomsLUDP[0, x, y, 0] == "block")
+                if (RoomsLUDR[0, x, y, 0] == "block")
                 {
-                    Creating(RoomsLUDP[0, x, y, 1], x, y); 
+                    Creating(RoomsLUDR[0, x, y, 1], x, y); 
                 }
             }
         }
