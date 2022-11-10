@@ -236,7 +236,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249128685}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -496,8 +496,10 @@ MonoBehaviour:
   - Dungon101_Tileset_9_solid
   - Dungon101_Tileset_10_solid
   - Dungon101_Tileset_11_solid
-  backingBlocks: []
-  backingNames: []
+  backingBlocks:
+  - {fileID: 1272059148, guid: e15b6e6abbaee0d4a8101607ceb45b8f, type: 3}
+  backingNames:
+  - Dungeon101_Tileset_94_backing
 --- !u!114 &1171503896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -882,7 +884,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -906,7 +908,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2086195153}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0.5, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
