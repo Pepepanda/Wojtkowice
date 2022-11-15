@@ -905,11 +905,11 @@ public class buildSystem : MonoBehaviour
             {
                 if (x == 0 && y == 0)
                 {
-                    DrawRoom("UR", 18, 11, startX + (x * 18), startY + (y * 11)); 
+                    DrawRoom("UR", 18, 11, startX, startY); 
                 }
                 else if (x == longX - 1 && y == 0)
                 {
-                    DrawRoom("LU", 18, 11, startX + (x * 18), startY + (y * 11)); 
+                    DrawRoom("LU", 18, 11, startX + (x * 18), startY); 
                 }
                 else if (x == longX - 1 && y == longY - 1)
                 {
@@ -917,11 +917,11 @@ public class buildSystem : MonoBehaviour
                 }
                 else if (x == 0 && y == longY - 1)
                 {
-                    DrawRoom("DR", 18, 11, startX + (x * 18), startY + (y * 11)); 
+                    DrawRoom("DR", 18, 11, startX, startY + (y * 11)); 
                 }
                 else if (x == 0)
                 {
-                    DrawRoom("UDR", 18, 11, startX + (x * 18), startY + (y * 11)); 
+                    DrawRoom("UDR", 18, 11, startX, startY + (y * 11)); 
                 }
                 else if (x == longX - 1)
                 {
@@ -929,7 +929,7 @@ public class buildSystem : MonoBehaviour
                 }
                 else if (y == 0)
                 {
-                    DrawRoom("LUR", 18, 11, startX + (x * 18), startY + (y * 11)); 
+                    DrawRoom("LUR", 18, 11, startX + (x * 18), startY); 
                 }
                 else if (y == longY - 1)
                 {
@@ -1094,7 +1094,7 @@ public class buildSystem : MonoBehaviour
             blockTemplate.AddComponent<BoxCollider2D>();
             currentRigid = blockTemplate.AddComponent<Rigidbody2D>();
             currentRigid.gravityScale = 0;
-            currentRigid.mass = 100000;
+            currentRigid.mass = 1000000;
             currentRigid.collisionDetectionMode = CollisionDetectionMode2D.Continuous; 
         }
     }
