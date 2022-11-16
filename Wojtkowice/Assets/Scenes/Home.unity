@@ -435,7 +435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1171503894}
   - component: {fileID: 1171503895}
-  - component: {fileID: 1171503896}
+  - component: {fileID: 1171503897}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -500,7 +500,7 @@ MonoBehaviour:
   - {fileID: 1272059148, guid: e15b6e6abbaee0d4a8101607ceb45b8f, type: 3}
   backingNames:
   - Dungeon101_Tileset_94_backing
---- !u!114 &1171503896
+--- !u!114 &1171503897
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -509,15 +509,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1171503892}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2931cac2fd14b24fbe4dd4f34d48df6, type: 3}
+  m_Script: {fileID: 11500000, guid: 4865d458752dba947937bccdab414902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  solidNoBuildLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  backingNoBuildLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  roomsLUDR:
+  - {fileID: 3243230472666373209, guid: 3bbb778c8a388b24aa7abee109f58551, type: 3}
+  roomsLUD:
+  - {fileID: 3864780096635144921, guid: 2a808ee81f6a4d24f92e5f5599f2232b, type: 3}
+  roomsLUR:
+  - {fileID: 6668274387324222433, guid: 5a1b7c7e037324e44aedee2db8d01e84, type: 3}
+  roomsLDR:
+  - {fileID: 3585690639815585925, guid: b1a06038f8b840943a58b8655f81b179, type: 3}
+  roomsUDR:
+  - {fileID: 3243230472666373209, guid: 3bbb778c8a388b24aa7abee109f58551, type: 3}
+  roomsLU:
+  - {fileID: 193719703191333832, guid: d7d0984c4272e5c448f52a81d98be4f3, type: 3}
+  roomsLD:
+  - {fileID: 3864780096635144921, guid: f858f2fc7bb5b114dac890a31ad71220, type: 3}
+  roomsUR:
+  - {fileID: 6668274387324222433, guid: 4520ff9f424ca6d428afe93d8d1f8c2a, type: 3}
+  roomsDR:
+  - {fileID: 3243230472666373209, guid: bdb507539c506034099c00e2ccdb89a4, type: 3}
 --- !u!1 &1287763002
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,25 +684,25 @@ Tilemap:
   m_TileMatrixArray:
   - m_RefCount: 0
     m_Data:
-      e00: 0
+      e00: 8.890922e+19
       e01: 0
-      e02: -5.14281e-39
-      e03: -5.14281e-39
-      e10: 0
+      e02: 8.081546e-39
+      e03: 8.081546e-39
+      e10: 4.58e-43
       e11: 0
-      e12: 5.84e-43
-      e13: 5.84e-43
-      e20: 1.1524127e+15
+      e12: 4.55e-43
+      e13: 4.55e-43
+      e20: -2.2245605e+27
       e21: 1e-45
-      e22: 5.609276e-29
-      e23: 4.673799e-10
+      e22: -4.8738378e-29
+      e23: -8.672854e+9
       e30: 4.5905e-41
       e31: 0
-      e32: 5.86e-43
-      e33: 5.89e-43
+      e32: 4.55e-43
+      e33: 4.58e-43
   m_TileColorArray:
   - m_RefCount: 0
-    m_Data: {r: 3.4337e-41, g: 3.4337e-41, b: 3.4337e-41, a: 3.4337e-41}
+    m_Data: {r: 3.4567e-41, g: 3.4567e-41, b: 3.4567e-41, a: 3.4567e-41}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -884,7 +896,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -908,7 +920,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2086195153}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
