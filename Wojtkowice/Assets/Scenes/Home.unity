@@ -451,7 +451,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171503892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.17639019, y: -0.8978003, z: -9.9238405}
+  m_LocalPosition: {x: 0, y: 0, z: -9.9238405}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsLUDR:
-  - {fileID: 3243230472666373209, guid: 3bbb778c8a388b24aa7abee109f58551, type: 3}
+  - {fileID: 5773800327734354387, guid: 3f76c9f270929be4f9516fdd962c0cd1, type: 3}
   roomsLUD:
   - {fileID: 3864780096635144921, guid: 2a808ee81f6a4d24f92e5f5599f2232b, type: 3}
   roomsLUR:
@@ -896,7 +896,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
