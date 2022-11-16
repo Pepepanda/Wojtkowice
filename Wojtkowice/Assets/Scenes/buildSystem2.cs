@@ -44,7 +44,8 @@ public class buildSystem2 : MonoBehaviour
         //createRoom("UR", 18, 0);
         //createRoom("LD", 0, 10);
         //createRoom("DR", 18, 10);
-        createHause(8, 7, 0, 0); 
+        //createHause(8, 7, 0, 0);
+        createHause(8, 7, -36, -20);
     }
 
     void createHause(int width, int height, int StartX, int StartY)
@@ -81,7 +82,7 @@ public class buildSystem2 : MonoBehaviour
                 {
                     createRoom("LUR", StartX + (x * 18), StartY);
                 }
-                else if (y == width - 1)
+                else if (y == height - 1)
                 {
                     createRoom("LDR", StartX + (x * 18), StartY + (y * 10));
                 }
