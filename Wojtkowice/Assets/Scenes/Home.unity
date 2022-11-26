@@ -243,7 +243,7 @@ Transform:
   - {fileID: 678237778}
   - {fileID: 1005141864}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &678237777
 GameObject:
@@ -357,7 +357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7387416358046871974, guid: 8dcce74adc2306343936ef7ca44331bb, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7387416358046871974, guid: 8dcce74adc2306343936ef7ca44331bb, type: 3}
       propertyPath: m_AnchorMax.x
@@ -549,6 +549,7 @@ GameObject:
   - component: {fileID: 1171503894}
   - component: {fileID: 1171503895}
   - component: {fileID: 1171503897}
+  - component: {fileID: 1171503898}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -569,7 +570,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1171503895
 MonoBehaviour:
@@ -625,8 +626,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4865d458752dba947937bccdab414902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seed: 
+  seed: d
   prefab: {fileID: 3864780096635144921, guid: f858f2fc7bb5b114dac890a31ad71220, type: 3}
+  nwidth: 10
+  nheight: 10
   roomsLUDR:
   - {fileID: 5773800327734354387, guid: 3f76c9f270929be4f9516fdd962c0cd1, type: 3}
   roomsLUD:
@@ -645,6 +648,23 @@ MonoBehaviour:
   - {fileID: 6668274387324222433, guid: 4520ff9f424ca6d428afe93d8d1f8c2a, type: 3}
   roomsDR:
   - {fileID: 3243230472666373209, guid: bdb507539c506034099c00e2ccdb89a4, type: 3}
+--- !u!114 &1171503898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171503892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2cdc355532b1ec44afe926e46c59946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  right: 0
+  left: 0
+  up: 0
+  down: 0
+  state: 0
 --- !u!1 &1287763002
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,7 +708,7 @@ Transform:
   m_Children:
   - {fileID: 1437860702}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1300225043 stripped
 MonoBehaviour:

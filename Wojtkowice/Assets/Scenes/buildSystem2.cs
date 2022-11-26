@@ -64,7 +64,98 @@ public class buildSystem2 : MonoBehaviour
     {
         createEmptyCeils(width, height);
         int x = 0, y = 0;
-        ceils[x, y].right = 1; 
+        while(ceils[x, y].state != 2)
+        {
+            if (x <= width && x >= 0 && y <= height && y >= 0)
+            {
+                if (ceils[x, y].count() == 0)
+                {
+                    int r = random.Next(0, 4);
+                    byte r2 = (byte)(random.Next(1, 3));
+                    switch (r)
+                    {
+                        case 0:
+                            Debug.Log("ceils[" + x + ", " + y + "].right = " + r2);
+                            ceils[x, y].right = r2;
+                            x++;
+                            if (x <= width)
+                            {
+                                //ceils[x, y].left = r2;
+                            }
+                            else
+                            {
+                                x = width; 
+                            }
+                            break;
+                        case 1:
+                            Debug.Log("ceils[" + x + ", " + y + "].left = " + r2);
+                            ceils[x, y].left = r2;
+                            x--;
+                            if (x >= 0)
+                            {
+                                ceils[x, y].right = r2;
+                            }
+                            else
+                            {
+                                x = 0;
+                            }
+                            break;
+                        case 2:
+                            Debug.Log("ceils[" + x + ", " + y + "].up = " + r2);
+                            ceils[x, y].up = r2;
+                            y++;
+                            if (y <= height)
+                            {
+                                ceils[x, y].down = r2;
+                            }
+                            else
+                            {
+                                y = height;
+                            }
+                            break;
+                        case 3:
+                            Debug.Log("ceils[" + x + ", " + y + "].down = " + r2);
+                            ceils[x, y].down = r2;
+                            y--;
+                            if (y >= 0)
+                            {
+                                ceils[x, y].up = r2;
+                            }
+                            else
+                            {
+                                y = 0;
+                            }
+                            break;
+                        default:
+                            Debug.Log("inna wartoœæ");
+                            break;
+                    }
+                }
+                else
+                {
+                    ceils[x, y].state = 2;
+                }
+            }
+            else
+            {
+                x = 0;
+                y = 0;
+                ceils[x, y].state = 2; 
+            }
+        }
+        for (x = 0; x < width; x++)
+        {
+            for (y = 0; y < height; y++)
+            {
+                //if(ceils[x, y].right == 1 && ceils[x, y].up == 1 && ceils[x, y].left == 1 && ceils[x, y].down == 1)
+                if(ceils[x, y].right == 1)
+                {
+                    GameObject newCeil = Instantiate(roomsLUDR[0], new Vector2(x * 18 + StartX, y * 10 + StartY), Quaternion.identity) as GameObject;
+                    newCeil.name = string.Format("Ceil({0}, {1})", x, y);
+                    newCeil.transform.parent = this.transform;
+                }
+            }
+        }
     }
     void createEmptyCeils(int width, int height)
     {
@@ -72,9 +163,6 @@ public class buildSystem2 : MonoBehaviour
         {
             for(int y = 0; y < height; y++)
             {
-                //ceil[x, y] = Instantiate(prefab, new Vector2(x * 18 + StartX, y * 10 + StartY), Quaternion.identity) as GameObject;
-                //ceil[x, y].name = string.Format("Ceil({0}, {1})", x, y);
-                //ceil[x, y].transform.parent = this.transform;
                 ceils[x, y] = new ceil(0, 0, 0, 0); 
             }
         }
