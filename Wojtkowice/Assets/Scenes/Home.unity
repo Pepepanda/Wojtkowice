@@ -625,6 +625,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4865d458752dba947937bccdab414902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  seed: 
+  prefab: {fileID: 3864780096635144921, guid: f858f2fc7bb5b114dac890a31ad71220, type: 3}
   roomsLUDR:
   - {fileID: 5773800327734354387, guid: 3f76c9f270929be4f9516fdd962c0cd1, type: 3}
   roomsLUD:

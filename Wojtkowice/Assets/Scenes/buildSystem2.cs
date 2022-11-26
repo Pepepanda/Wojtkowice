@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System; 
 using UnityEngine;
 
 public class buildSystem2 : MonoBehaviour
 {
     private System.Random rand = new System.Random();
+    System.Random random;
+    public string seed; 
+    public GameObject prefab;
+    public int nwidth, nheight; 
 
     int numberRoomsLUDR = 1; 
     [SerializeField]
@@ -34,6 +39,8 @@ public class buildSystem2 : MonoBehaviour
     [SerializeField]
     GameObject[] roomsDR;
 
+    public ceil[,] ceils; 
+
     void Awake()
     {
         //createRoom("LUD", 0, 0);
@@ -45,9 +52,33 @@ public class buildSystem2 : MonoBehaviour
         //createRoom("LD", 0, 10);
         //createRoom("DR", 18, 10);
         //createHause(8, 7, 0, 0);
-        createHause(8, 7, -36, -20);
+        random = new System.Random((!string.IsNullOrEmpty(seed)) ? seed.GetHashCode() : System.Guid.NewGuid().GetHashCode());
+        ceils = new ceil[nwidth, nheight]; 
     }
-
+    void Start()
+    {
+        //createHause(8, 7, -36, -20);
+        createLabirynt(nwidth, nheight, 0, 0); 
+    }
+    void createLabirynt(int width, int height, int StartX, int StartY)
+    {
+        createEmptyCeils(width, height);
+        int x = 0, y = 0;
+        ceils[x, y].right = 1; 
+    }
+    void createEmptyCeils(int width, int height)
+    {
+        for(int x = 0; x < width; x++)
+        {
+            for(int y = 0; y < height; y++)
+            {
+                //ceil[x, y] = Instantiate(prefab, new Vector2(x * 18 + StartX, y * 10 + StartY), Quaternion.identity) as GameObject;
+                //ceil[x, y].name = string.Format("Ceil({0}, {1})", x, y);
+                //ceil[x, y].transform.parent = this.transform;
+                ceils[x, y] = new ceil(0, 0, 0, 0); 
+            }
+        }
+    }
     void createHause(int width, int height, int StartX, int StartY)
     {
         for(int x = 0; x < width; x++)
