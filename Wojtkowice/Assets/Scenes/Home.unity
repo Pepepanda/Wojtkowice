@@ -628,8 +628,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seed: d
   prefab: {fileID: 3864780096635144921, guid: f858f2fc7bb5b114dac890a31ad71220, type: 3}
-  nwidth: 10
-  nheight: 10
+  nwidth: 100
+  nheight: 100
+  chance: 7
   roomsLUDR:
   - {fileID: 5773800327734354387, guid: 3f76c9f270929be4f9516fdd962c0cd1, type: 3}
   roomsLUD:
@@ -664,6 +665,8 @@ MonoBehaviour:
   left: 0
   up: 0
   down: 0
+  beforeX: -50
+  beforeY: -50
   state: 0
 --- !u!1 &1287763002
 GameObject:
