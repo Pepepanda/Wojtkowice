@@ -33,9 +33,15 @@ public class buildSystem2 : MonoBehaviour
     int numberRoomsLD;
     [SerializeField]
     GameObject[] roomsLD;
+    int numberRoomsUD;
+    [SerializeField]
+    GameObject[] roomsUD;
     int numberRoomsUR;
     [SerializeField]
     GameObject[] roomsUR;
+    int numberRoomsLR;
+    [SerializeField]
+    GameObject[] roomsLR;
     int numberRoomsDR;
     [SerializeField]
     GameObject[] roomsDR;
@@ -75,6 +81,8 @@ public class buildSystem2 : MonoBehaviour
         numberRoomsLD = roomsLD.Length;
         numberRoomsUR = roomsUR.Length;
         numberRoomsDR = roomsDR.Length;
+        numberRoomsUD = roomsUD.Length;
+        numberRoomsLR = roomsLR.Length;
         numberRoomsL = roomsL.Length;
         numberRoomsD = roomsD.Length;
         numberRoomsU = roomsU.Length;
@@ -342,6 +350,14 @@ public class buildSystem2 : MonoBehaviour
                 {
                     createRoom("UR", x, y, StartX, StartY);
                 }
+                else if (ceils[x, y].up == 1 && ceils[x, y].down == 1)
+                {
+                    createRoom("UD", x, y, StartX, StartY);
+                }
+                else if (ceils[x, y].left == 1 && ceils[x, y].right == 1)
+                {
+                    createRoom("LR", x, y, StartX, StartY);
+                }
                 else if (ceils[x, y].left == 1)
                 {
                     createRoom("L", x, y, StartX, StartY);
@@ -470,6 +486,18 @@ public class buildSystem2 : MonoBehaviour
         else if (nameOfRoom == "DR")
         {
             GameObject newCeil = Instantiate(roomsDR[rand.Next(numberRoomsDR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+            newCeil.name = string.Format("Ceil({0}, {1})", x, y);
+            newCeil.transform.parent = this.transform;
+        }
+        else if (nameOfRoom == "UD")
+        {
+            GameObject newCeil = Instantiate(roomsUD[rand.Next(numberRoomsUD)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+            newCeil.name = string.Format("Ceil({0}, {1})", x, y);
+            newCeil.transform.parent = this.transform;
+        }
+        else if (nameOfRoom == "LR")
+        {
+            GameObject newCeil = Instantiate(roomsLR[rand.Next(numberRoomsLR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
             newCeil.name = string.Format("Ceil({0}, {1})", x, y);
             newCeil.transform.parent = this.transform;
         }
