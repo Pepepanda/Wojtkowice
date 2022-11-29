@@ -12,33 +12,45 @@ public class buildSystem2 : MonoBehaviour
     public int nwidth, nheight, chance;
     byte r2; 
 
-    int numberRoomsLUDR = 1;
+    int numberRoomsLUDR;
     [SerializeField]
     GameObject[] roomsLUDR;
-    int numberRoomsLUD = 1;
+    int numberRoomsLUD;
     [SerializeField]
     GameObject[] roomsLUD;
-    int numberRoomsLUR = 1;
+    int numberRoomsLUR;
     [SerializeField]
     GameObject[] roomsLUR;
-    int numberRoomsLDR = 1;
+    int numberRoomsLDR;
     [SerializeField]
     GameObject[] roomsLDR;
-    int numberRoomsUDR = 1;
+    int numberRoomsUDR;
     [SerializeField]
     GameObject[] roomsUDR;
-    int numberRoomsLU = 1;
+    int numberRoomsLU;
     [SerializeField]
     GameObject[] roomsLU;
-    int numberRoomsLD = 1;
+    int numberRoomsLD;
     [SerializeField]
     GameObject[] roomsLD;
-    int numberRoomsUR = 1;
+    int numberRoomsUR;
     [SerializeField]
     GameObject[] roomsUR;
-    int numberRoomsDR = 1;
+    int numberRoomsDR;
     [SerializeField]
     GameObject[] roomsDR;
+    int numberRoomsR;
+    [SerializeField]
+    GameObject[] roomsR;
+    int numberRoomsD;
+    [SerializeField]
+    GameObject[] roomsD;
+    int numberRoomsU;
+    [SerializeField]
+    GameObject[] roomsU;
+    int numberRoomsL;
+    [SerializeField]
+    GameObject[] roomsL;
 
     public ceil[,] ceils;
 
@@ -54,6 +66,19 @@ public class buildSystem2 : MonoBehaviour
         //createRoom("DR", 18, 10);
         //createHause(8, 7, 0, 0);
         random = new System.Random((!string.IsNullOrEmpty(seed)) ? seed.GetHashCode() : System.Guid.NewGuid().GetHashCode());
+        numberRoomsLUDR = roomsLUDR.Length;
+        numberRoomsLUD = roomsLUD.Length;
+        numberRoomsLUR = roomsLUR.Length;
+        numberRoomsLDR = roomsLDR.Length;
+        numberRoomsUDR = roomsUDR.Length;
+        numberRoomsLU = roomsLU.Length;
+        numberRoomsLD = roomsLD.Length;
+        numberRoomsUR = roomsUR.Length;
+        numberRoomsDR = roomsDR.Length;
+        numberRoomsL = roomsL.Length;
+        numberRoomsD = roomsD.Length;
+        numberRoomsU = roomsU.Length;
+        numberRoomsR = roomsR.Length;
         ceils = new ceil[nwidth, nheight];
     }
     void Start()
@@ -83,6 +108,7 @@ public class buildSystem2 : MonoBehaviour
                             if (ceils[x, y].right == 0)
                             {
                                 int r1 = random.Next(1, chance);
+                                r2 = 2; 
                                 if (r1 != 2)
                                 {
                                     r2 = 1;
@@ -124,6 +150,7 @@ public class buildSystem2 : MonoBehaviour
                             if (ceils[x, y].left == 0)
                             {
                                 int r1 = random.Next(1, chance);
+                                r2 = 2;
                                 if (r1 != 2)
                                 {
                                     r2 = 1;
@@ -165,6 +192,7 @@ public class buildSystem2 : MonoBehaviour
                             if (ceils[x, y].up == 0)
                             {
                                 int r1 = random.Next(1, chance);
+                                r2 = 2;
                                 if (r1 != 2)
                                 {
                                     r2 = 1;
@@ -206,6 +234,7 @@ public class buildSystem2 : MonoBehaviour
                             if (ceils[x, y].down == 0)
                             {
                                 int r1 = random.Next(1, chance);
+                                r2 = 2;
                                 if (r1 != 2)
                                 {
                                     r2 = 1;
@@ -297,13 +326,37 @@ public class buildSystem2 : MonoBehaviour
                 {
                     createRoom("UDR", x, y, StartX, StartY);
                 }
-                else if(ceils[x, y].right == 1 || ceils[x, y].left == 1 || ceils[x, y].up == 1 || ceils[x, y].down == 1)
+                else if (ceils[x, y].left == 1 && ceils[x, y].up == 1)
                 {
-                    createRoom("LU", x, y, StartX, StartY); 
+                    createRoom("LU", x, y, StartX, StartY);
                 }
-                else if(ceils[x, y].right == 2 || ceils[x, y].left == 2 || ceils[x, y].up == 2 || ceils[x, y].down == 2)
+                else if (ceils[x, y].left == 1 && ceils[x, y].down == 1)
+                {
+                    createRoom("LD", x, y, StartX, StartY);
+                }
+                else if (ceils[x, y].down == 1 && ceils[x, y].right == 1)
                 {
                     createRoom("DR", x, y, StartX, StartY);
+                }
+                else if (ceils[x, y].up == 1 && ceils[x, y].right == 1)
+                {
+                    createRoom("UR", x, y, StartX, StartY);
+                }
+                else if (ceils[x, y].left == 1)
+                {
+                    createRoom("L", x, y, StartX, StartY);
+                }
+                else if (ceils[x, y].up == 1)
+                {
+                    createRoom("U", x, y, StartX, StartY);
+                }
+                else if (ceils[x, y].down == 1)
+                {
+                    createRoom("D", x, y, StartX, StartY);
+                }
+                else if (ceils[x, y].right == 1)
+                {
+                    createRoom("R", x, y, StartX, StartY);
                 }
             }
         }
@@ -417,6 +470,30 @@ public class buildSystem2 : MonoBehaviour
         else if (nameOfRoom == "DR")
         {
             GameObject newCeil = Instantiate(roomsDR[rand.Next(numberRoomsDR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+            newCeil.name = string.Format("Ceil({0}, {1})", x, y);
+            newCeil.transform.parent = this.transform;
+        }
+        else if (nameOfRoom == "L")
+        {
+            GameObject newCeil = Instantiate(roomsL[rand.Next(numberRoomsL)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+            newCeil.name = string.Format("Ceil({0}, {1})", x, y);
+            newCeil.transform.parent = this.transform;
+        }
+        else if (nameOfRoom == "U")
+        {
+            GameObject newCeil = Instantiate(roomsU[rand.Next(numberRoomsU)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+            newCeil.name = string.Format("Ceil({0}, {1})", x, y);
+            newCeil.transform.parent = this.transform;
+        }
+        else if (nameOfRoom == "D")
+        {
+            GameObject newCeil = Instantiate(roomsD[rand.Next(numberRoomsD)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+            newCeil.name = string.Format("Ceil({0}, {1})", x, y);
+            newCeil.transform.parent = this.transform;
+        }
+        else if (nameOfRoom == "R")
+        {
+            GameObject newCeil = Instantiate(roomsR[rand.Next(numberRoomsR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
             newCeil.name = string.Format("Ceil({0}, {1})", x, y);
             newCeil.transform.parent = this.transform;
         }
