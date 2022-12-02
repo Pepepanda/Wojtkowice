@@ -512,11 +512,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4865d458752dba947937bccdab414902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   seed: a
   prefab: {fileID: 0}
   nwidth: 18
   nheight: 18
   chance: 7
+=======
+>>>>>>> Stashed changes
   roomsLUDR:
   - {fileID: 5773800327734354387, guid: 3f76c9f270929be4f9516fdd962c0cd1, type: 3}
   roomsLUD:
@@ -539,6 +542,7 @@ MonoBehaviour:
   - {fileID: 3585690639815585925, guid: 7ec9a160976c6b24286d4366226c2821, type: 3}
   roomsDR:
   - {fileID: 3243230472666373209, guid: bdb507539c506034099c00e2ccdb89a4, type: 3}
+<<<<<<< Updated upstream
   roomsR:
   - {fileID: 6668274387324222433, guid: 021471b43d8b4d444a845887e2eb4c46, type: 3}
   roomsD:
@@ -547,6 +551,8 @@ MonoBehaviour:
   - {fileID: 3243230472666373209, guid: d612ab51c518b23418af275b1d411713, type: 3}
   roomsL:
   - {fileID: 6668274387324222433, guid: 34d4c605076fbcb4d8d11133f19009a7, type: 3}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1287763002
 GameObject:
   m_ObjectHideFlags: 0
