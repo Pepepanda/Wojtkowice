@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class buildSystem2 : MonoBehaviour
 {
-    private System.Random rand = new System.Random();
     System.Random random;
     public string seed;
     public GameObject prefab;
@@ -437,91 +436,91 @@ public class buildSystem2 : MonoBehaviour
     {
         if (nameOfRoom == "LUDR")
         {
-            GameObject newCeil = Instantiate(roomsLUDR[rand.Next(numberRoomsLUDR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+            GameObject newCeil = Instantiate(roomsLUDR[random.Next(0, numberRoomsLUDR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
             newCeil.name = string.Format("Ceil({0}, {1})", x, y);
             newCeil.transform.parent = this.transform;
         }
         else if (nameOfRoom == "LUD")
         {
-            GameObject newCeil = Instantiate(roomsLUD[rand.Next(numberRoomsLUD)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+            GameObject newCeil = Instantiate(roomsLUD[random.Next(0, numberRoomsLUD)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
             newCeil.name = string.Format("Ceil({0}, {1})", x, y);
             newCeil.transform.parent = this.transform;
         }
         else if (nameOfRoom == "LUR")
         {
-            GameObject newCeil = Instantiate(roomsLUR[rand.Next(numberRoomsLUR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+            GameObject newCeil = Instantiate(roomsLUR[random.Next(0, numberRoomsLUR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
             newCeil.name = string.Format("Ceil({0}, {1})", x, y);
             newCeil.transform.parent = this.transform;
         }
         else if (nameOfRoom == "LDR")
         {
-            GameObject newCeil = Instantiate(roomsLDR[rand.Next(numberRoomsLDR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+            GameObject newCeil = Instantiate(roomsLDR[random.Next(0, numberRoomsLDR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
             newCeil.name = string.Format("Ceil({0}, {1})", x, y);
             newCeil.transform.parent = this.transform;
         }
         else if (nameOfRoom == "UDR")
         {
-            GameObject newCeil = Instantiate(roomsUDR[rand.Next(numberRoomsUDR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+            GameObject newCeil = Instantiate(roomsUDR[random.Next(0, numberRoomsUDR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
             newCeil.name = string.Format("Ceil({0}, {1})", x, y);
             newCeil.transform.parent = this.transform;
         }
         else if (nameOfRoom == "LU")
         {
-            GameObject newCeil = Instantiate(roomsLU[rand.Next(numberRoomsLU)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+            GameObject newCeil = Instantiate(roomsLU[random.Next(0, numberRoomsLU)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
             newCeil.name = string.Format("Ceil({0}, {1})", x, y);
             newCeil.transform.parent = this.transform;
         }
         else if (nameOfRoom == "UR")
         {
-            GameObject newCeil = Instantiate(roomsUR[rand.Next(numberRoomsUR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+            GameObject newCeil = Instantiate(roomsUR[random.Next(0, numberRoomsUR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
             newCeil.name = string.Format("Ceil({0}, {1})", x, y);
             newCeil.transform.parent = this.transform;
         }
         else if (nameOfRoom == "LD")
         {
-            GameObject newCeil = Instantiate(roomsLD[rand.Next(numberRoomsLD)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+            GameObject newCeil = Instantiate(roomsLD[random.Next(0, numberRoomsLD)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
             newCeil.name = string.Format("Ceil({0}, {1})", x, y);
             newCeil.transform.parent = this.transform;
         }
         else if (nameOfRoom == "DR")
         {
-            GameObject newCeil = Instantiate(roomsDR[rand.Next(numberRoomsDR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+            GameObject newCeil = Instantiate(roomsDR[random.Next(0, numberRoomsDR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
             newCeil.name = string.Format("Ceil({0}, {1})", x, y);
             newCeil.transform.parent = this.transform;
         }
         else if (nameOfRoom == "UD")
         {
-            GameObject newCeil = Instantiate(roomsUD[rand.Next(numberRoomsUD)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+            GameObject newCeil = Instantiate(roomsUD[random.Next(0, numberRoomsUD)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
             newCeil.name = string.Format("Ceil({0}, {1})", x, y);
             newCeil.transform.parent = this.transform;
         }
         else if (nameOfRoom == "LR")
         {
-            GameObject newCeil = Instantiate(roomsLR[rand.Next(numberRoomsLR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+            GameObject newCeil = Instantiate(roomsLR[random.Next(0, numberRoomsLR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
             newCeil.name = string.Format("Ceil({0}, {1})", x, y);
             newCeil.transform.parent = this.transform;
         }
         else if (nameOfRoom == "L")
         {
-            GameObject newCeil = Instantiate(roomsL[rand.Next(numberRoomsL)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+            GameObject newCeil = Instantiate(roomsL[random.Next(0, numberRoomsL)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
             newCeil.name = string.Format("Ceil({0}, {1})", x, y);
             newCeil.transform.parent = this.transform;
         }
         else if (nameOfRoom == "U")
         {
-            GameObject newCeil = Instantiate(roomsU[rand.Next(numberRoomsU)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+            GameObject newCeil = Instantiate(roomsU[random.Next(0, numberRoomsU)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
             newCeil.name = string.Format("Ceil({0}, {1})", x, y);
             newCeil.transform.parent = this.transform;
         }
         else if (nameOfRoom == "D")
         {
-            GameObject newCeil = Instantiate(roomsD[rand.Next(numberRoomsD)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+            GameObject newCeil = Instantiate(roomsD[random.Next(0, numberRoomsD)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
             newCeil.name = string.Format("Ceil({0}, {1})", x, y);
             newCeil.transform.parent = this.transform;
         }
         else if (nameOfRoom == "R")
         {
-            GameObject newCeil = Instantiate(roomsR[rand.Next(numberRoomsR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+            GameObject newCeil = Instantiate(roomsR[random.Next(0, numberRoomsR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
             newCeil.name = string.Format("Ceil({0}, {1})", x, y);
             newCeil.transform.parent = this.transform;
         }
