@@ -7,9 +7,18 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
+<<<<<<< HEAD
 	"last_search.DE949528" = "Tile"
 	"OpenInspectorPreview.DE949528" = "0"
 	"currentGroup.DE949528" = "menu"
+=======
+	"last_search.EAB0C2BA" = "Tile Palette"
+	"OpenInspectorPreview.EAB0C2BA" = "0"
+	"currentGroup.EAB0C2BA" = "all"
+	"last_search.DE949528" = "Tile Pale"
+	"OpenInspectorPreview.DE949528" = "0"
+	"currentGroup.DE949528" = "all"
+>>>>>>> main
 }
 providers = {
 	adb = {
@@ -56,7 +65,10 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+<<<<<<< HEAD
 	"t"
+=======
+>>>>>>> main
 ]
 searchItemFavorites = [
 ]
