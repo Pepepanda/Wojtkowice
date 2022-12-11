@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelGeneration : MonoBehaviour
+public class PickUpGenerator : MonoBehaviour
 {
     public GameObject[] objects;
 
