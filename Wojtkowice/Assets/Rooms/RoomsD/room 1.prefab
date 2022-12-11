@@ -55,6 +55,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+<<<<<<< HEAD
+=======
 --- !u!1 &6275554862680027149
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +237,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+>>>>>>> main
 --- !u!1 &7078343062472049504
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +268,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 283603581417745076}
-  - {fileID: 4508861197765660236}
   m_Father: {fileID: 4918753773229369270}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
