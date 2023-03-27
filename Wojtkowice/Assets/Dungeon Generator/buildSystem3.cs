@@ -9,8 +9,8 @@ public class buildSystem3 : MonoBehaviour
     System.Random random;
     public string seed;
     public int widthPlus, widthMinus, heightPlus, heightMinus;
-    public int actualx, actualy;
-    private int startx, starty; 
+    private int actualx, actualy;
+    public int startx, starty; 
 
     int numberRoomsLUDR;
     [SerializeField]
@@ -78,18 +78,86 @@ public class buildSystem3 : MonoBehaviour
         numberRoomsD = roomsD.Length;
         numberRoomsU = roomsU.Length;
         numberRoomsR = roomsR.Length;
-        ceils = new ceil2[widthPlus + widthMinus + 1, heightPlus + heightMinus + 1];
-        createEmptyCeils(widthPlus + widthMinus + 1, heightPlus + heightMinus + 1);
-        startx = actualx;
-        starty = actualy; 
+        ceils = new ceil2[widthPlus + widthMinus + 2, heightPlus + heightMinus + 2];
+        createEmptyCeils(widthPlus + widthMinus + 2, heightPlus + heightMinus + 2);
+        actualx = startx + widthMinus + 1;
+        actualy = starty + widthMinus + 1;
+
+        createLabirynt();
+        activateLabirynt(); 
     }
 
     void createLabirynt()
     {
-        do
+        while(true)
         {
+            ceils[actualx, actualy].isActive = true;
 
-        } while (actualx == startx && actualy == starty); 
+            int ile = 0;
+            if (isActive(-1, 0)) ile++;
+            if (isActive(0, 1)) ile++;
+            if (isActive(0, -1)) ile++;
+            if (isActive(1, 0)) ile++;
+            if(ile == 0)
+            {
+                List<int> newActual = ceils[actualx, actualy].before();
+                actualx = newActual[0];
+                actualy = newActual[1];
+            }
+            else
+            {
+                int ran = random.Next(0, ile + 1); 
+                ile = 0;
+                if (isActive(-1, 0)) ile++;
+                if(ran == ile)
+                {
+                    ceils[actualx, actualy].left = true;
+                    actualx -= 1;
+                    ceils[actualx, actualy].right = true; 
+                }
+                else
+                {
+                    if (isActive(0, 1)) ile++;
+                    if (ran == ile)
+                    {
+                        ceils[actualx, actualy].up = true;
+                        actualy += 1;
+                        ceils[actualx, actualy].down = true;
+                    }
+                    else
+                    {
+                        if (isActive(0, -1)) ile++;
+                        if (ran == ile)
+                        {
+                            ceils[actualx, actualy].down = true;
+                            actualy -= 1;
+                            ceils[actualx, actualy].up = true;
+                        }
+                        else
+                        {
+                            if (isActive(1, 0)) ile++;
+                            if (ran == ile)
+                            {
+                                ceils[actualx, actualy].right = true;
+                                actualx += 1;
+                                ceils[actualx, actualy].left = true;
+                            }
+                            else
+                            {
+                                UnityEngine.Debug.Log("Coœ posz³o nie tak");
+                                List<int> newActual = ceils[actualx, actualy].before();
+                                actualx = newActual[0];
+                                actualy = newActual[1];
+                            }
+                        }
+                    }
+                }
+            }
+            if(actualx == startx + widthMinus + 1 && actualy == starty + widthMinus + 1)
+            {
+                break; 
+            }
+        }
     }
 
     void createEmptyCeils(int width, int height)
@@ -98,7 +166,134 @@ public class buildSystem3 : MonoBehaviour
         {
             for (int y = 0; y < height; y++)
             {
-                ceils[x, y] = new ceil2();
+                ceils[x, y] = gameObject.AddComponent<ceil2>();
+            }
+        }
+    }
+
+    bool isActive(int x, int y)
+    {
+        if (x > 0 && widthPlus + widthMinus + 1 == actualx) return false;
+        if (x < 0 && actualx == 0) return false;
+        if (y > 0 && heightPlus + heightMinus + 1 == actualy) return false;
+        if (y < 0 && actualy == 0) return false;
+        if (ceils[actualx + x, actualy + y].isActive) return false;
+        return true; 
+    }
+
+    void activateLabirynt()
+    {
+        for(int i = 0; i <= widthPlus + widthMinus; i++)
+        {
+            for(int j = 0; j <= heightPlus + heightMinus; j++)
+            {
+                if(ceils[i, j].left)
+                {
+                    if(ceils[i, j].up)
+                    {
+                        if(ceils[i, j].down)
+                        {
+                            if(ceils[i, j].right)
+                            {
+                                createRoom("LUDR", i - widthMinus, j - heightMinus, startx * 18, starty * 10); 
+                            }
+                            else
+                            {
+                                createRoom("LUD", i - widthMinus, j - heightMinus, startx * 18, starty * 10);
+                            }
+                        }
+                        else
+                        {
+                            if (ceils[i, j].right)
+                            {
+                                createRoom("LUR", i - widthMinus, j - heightMinus, startx * 18, starty * 10);
+                            }
+                            else
+                            {
+                                createRoom("LU", i - widthMinus, j - heightMinus, startx * 18, starty * 10);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (ceils[i, j].down)
+                        {
+                            if (ceils[i, j].right)
+                            {
+                                createRoom("LDR", i - widthMinus, j - heightMinus, startx * 18, starty * 10);
+                            }
+                            else
+                            {
+                                createRoom("LD", i - widthMinus, j - heightMinus, startx * 18, starty * 10);
+                            }
+                        }
+                        else
+                        {
+                            if (ceils[i, j].right)
+                            {
+                                createRoom("LR", i - widthMinus, j - heightMinus, startx * 18, starty * 10);
+                            }
+                            else
+                            {
+                                createRoom("L", i - widthMinus, j - heightMinus, startx * 18, starty * 10);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    if (ceils[i, j].up)
+                    {
+                        if (ceils[i, j].down)
+                        {
+                            if (ceils[i, j].right)
+                            {
+                                createRoom("UDR", i - widthMinus, j - heightMinus, startx * 18, starty * 10);
+                            }
+                            else
+                            {
+                                createRoom("UD", i - widthMinus, j - heightMinus, startx * 18, starty * 10);
+                            }
+                        }
+                        else
+                        {
+                            if (ceils[i, j].right)
+                            {
+                                createRoom("UR", i - widthMinus, j - heightMinus, startx * 18, starty * 10);
+                            }
+                            else
+                            {
+                                createRoom("U", i - widthMinus, j - heightMinus, startx * 18, starty * 10);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (ceils[i, j].down)
+                        {
+                            if (ceils[i, j].right)
+                            {
+                                createRoom("DR", i - widthMinus, j - heightMinus, startx * 18, starty * 10);
+                            }
+                            else
+                            {
+                                createRoom("D", i - widthMinus, j - heightMinus, startx * 18, starty * 10);
+                            }
+                        }
+                        else
+                        {
+                            if (ceils[i, j].right)
+                            {
+                                createRoom("R", i - widthMinus, j - heightMinus, startx * 18, starty * 10);
+                            }
+                            else
+                            {
+                                UnityEngine.Debug.Log("pusty pokój"); 
+                                createRoom("", i - widthMinus, j - heightMinus, startx * 18, starty * 10);
+                            }
+                        }
+                    }
+                }
             }
         }
     }

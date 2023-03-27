@@ -15,4 +15,9 @@ public class ceil2 : MonoBehaviour
         down = false;
         isActive = false; 
     }
+
+    public List<int> before()
+    {
+        return new List<int>{ beforeX, beforeY }; 
+    }
 }

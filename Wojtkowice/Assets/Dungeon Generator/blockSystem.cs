@@ -15,7 +15,7 @@ public class blockSystem : MonoBehaviour
     [SerializeField]
     private string[] backingNames;
 
-    private void Awake()
+    /*private void Awake()
     { 
         allBlocks = new Block[solidBlocks.Length + backingBlocks.Length];
         int newBlockId = 0;
@@ -33,7 +33,7 @@ public class blockSystem : MonoBehaviour
             Debug.Log("Solid block: allblock[" + newBlockId + "] = " + backingBlocks[j]);
             newBlockId++; 
         }
-    }
+    }*/
 }
 
 public class Block

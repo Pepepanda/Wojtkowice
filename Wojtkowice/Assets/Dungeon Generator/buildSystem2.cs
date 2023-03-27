@@ -60,7 +60,7 @@ public class buildSystem2 : MonoBehaviour
 
     public ceil[,] ceils;
 
-    void Awake()
+    /*void Awake()
     {
         //createRoom("LUD", 0, 0);
         //createRoom("LUR", 18, 0);
@@ -93,7 +93,8 @@ public class buildSystem2 : MonoBehaviour
     {
         //createHause(8, 7, -36, -20);
         starta(nwidth, nheight, 0, 0);
-    }
+    }*/
+
     void starta(int width, int height, int StartX, int StartY)
     {
         createEmptyCeils(width, height);
