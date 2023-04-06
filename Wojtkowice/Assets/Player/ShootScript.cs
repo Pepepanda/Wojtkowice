@@ -19,7 +19,7 @@ public class ShootScript : MonoBehaviour
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         ammo = maxAmmo;
-        //ammoBar.SetAmmo(ammo);
+        ammoBar.SetAmmo(ammo);
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class ShootScript : MonoBehaviour
             {
                 Shoot();
                 ammo--;
-                //ammoBar.SetAmmo(ammo);
+                ammoBar.SetAmmo(ammo);
             }
         }
     }
