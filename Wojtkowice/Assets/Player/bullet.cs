@@ -1,27 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    void OnTriggerEnter2D(Collider2D hitinfo)
-    {
-        EnemyDie EnemyDie = hitinfo.GetComponent<EnemyDie>();
-        if(EnemyDie != null)
+        EnemyDie EnemyDie = collision.GetComponent<EnemyDie>();
+        if (EnemyDie != null)
         {
             EnemyDie.TakeDamage(2);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+        if (collision.gameObject.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }
     }
 }
