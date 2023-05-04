@@ -20,6 +20,7 @@ public class ShootScript : MonoBehaviour
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         ammo = maxAmmo;
         ammoBar.SetAmmo(ammo);
+        Time.timeScale = 0f;
     }
 
     // Update is called once per frame
@@ -28,13 +29,16 @@ public class ShootScript : MonoBehaviour
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
         direction = mousePos - (Vector2)Gun.position;
         FaceMouse();
-        if (Input.GetMouseButtonDown(0))
+        if (Time.timeScale != 0f)
         {
-            if (ammo != 0)
+            if (Input.GetMouseButtonDown(0))
             {
-                Shoot();
-                ammo--;
-                ammoBar.SetAmmo(ammo);
+                if (ammo != 0)
+                {
+                    Shoot();
+                    ammo--;
+                    ammoBar.SetAmmo(ammo);
+                }
             }
         }
     }
@@ -44,9 +48,12 @@ public class ShootScript : MonoBehaviour
     }
     void Shoot()
     {
-        GameObject BulletIns = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
-        BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.right * BulletSpeed);
-        Destroy(BulletIns,1);
+        if (Time.timeScale != 0f)
+        {
+            GameObject BulletIns = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
+            BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.right * BulletSpeed);
+            Destroy(BulletIns, 1);
+        }
     }
     public void GetAmmo()
     {
