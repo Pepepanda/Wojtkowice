@@ -11,7 +11,8 @@ public class buildSystem3 : MonoBehaviour
     public bool isConsoleWrite; 
     public int widthPlus, widthMinus, heightPlus, heightMinus;
     private int actualx, actualy;
-    public int startx, starty; 
+    public int startx, starty;
+    public int chance, maxLongSeed; 
 
     int numberRoomsLUDR;
     [SerializeField]
@@ -63,6 +64,18 @@ public class buildSystem3 : MonoBehaviour
 
     void Awake()
     {
+        if (string.IsNullOrEmpty(seed))
+        {
+            int longSeed = rand.Next(2, maxLongSeed), randomNumber;
+            char current;
+            for (int i = 0; i < longSeed; i++)
+            {
+                randomNumber = rand.Next(33, 127); 
+                current = (char)randomNumber;
+                seed += current;
+            }
+        }
+
         random = new System.Random((!string.IsNullOrEmpty(seed)) ? seed.GetHashCode() : System.Guid.NewGuid().GetHashCode());
         numberRoomsLUDR = roomsLUDR.Length;
         numberRoomsLUD = roomsLUD.Length;
@@ -94,8 +107,8 @@ public class buildSystem3 : MonoBehaviour
         {
             ceils[actualx, actualy].isActive = true;
 
-            if (isConsoleWrite) UnityEngine.Debug.Log($"createLabirynt(), actualx: {actualx}, actualy: {actualy}, w lewo: {isActive(-1, 0)}, w górê: {isActive(0, 1)}, " +
-                $"w dó³: {isActive(0, -1)}, w prawo: {isActive(1, 0)}, beforeX: {ceils[actualx, actualy].beforeX}, beforeY: {ceils[actualx, actualy].beforeY} "); 
+            if (isConsoleWrite) UnityEngine.Debug.Log($"createLabirynt(), actualx: {actualx}, actualy: {actualy}, w lewo: {isActive(-1, 0)}, w gï¿½rï¿½: {isActive(0, 1)}, " +
+                $"w dï¿½: {isActive(0, -1)}, w prawo: {isActive(1, 0)}, beforeX: {ceils[actualx, actualy].beforeX}, beforeY: {ceils[actualx, actualy].beforeY} "); 
 
             int ile = 0;
             if (isActive(-1, 0)) ile++;
@@ -108,11 +121,20 @@ public class buildSystem3 : MonoBehaviour
                 int newActualY = ceils[actualx, actualy].beforeY;
                 actualx = newActualX;
                 actualy = newActualY;
-                if (isConsoleWrite) UnityEngine.Debug.Log($"createLabirynt(), cofniêcie do poprzedniego z powodu braku mo¿liwoœci iœcia dalej, actualx: {actualx}, actualy: {actualy} ");
+                if (isConsoleWrite) UnityEngine.Debug.Log($"createLabirynt(), cofniÄ™cie do poprzedniego z powodu braku moÅ¼liwoÅ›ci iÅ›cia dalej, actualx: {actualx}, actualy: {actualy} ");
             }
             else
             {
-                int ran = random.Next(1, ile + 1); 
+                int isZero = random.Next(0, chance); 
+                if(isZero == 0)
+                {
+                    int newActualX = ceils[actualx, actualy].beforeX;
+                    int newActualY = ceils[actualx, actualy].beforeY;
+                    actualx = newActualX;
+                    actualy = newActualY;
+                    if (isConsoleWrite) UnityEngine.Debug.Log($"createLabirynt(), cofniÄ™cie do poprzedniego z powodu wylosowania takiej wartoÅ›ci, actualx: {actualx}, actualy: {actualy} ");
+                }
+                int ran = random.Next(1, ile + 1);
                 ile = 0;
                 if (isActive(-1, 0)) ile++;
                 if(ran == ile)
@@ -134,7 +156,7 @@ public class buildSystem3 : MonoBehaviour
                         ceils[actualx, actualy].down = true;
                         ceils[actualx, actualy].beforeX = actualx;
                         ceils[actualx, actualy].beforeY = actualy - 1;
-                        if (isConsoleWrite) UnityEngine.Debug.Log($"createLabirynt(), w górê: actualx: {actualx}, actualy: {actualy}, newBeforeX: {ceils[actualx, actualy].beforeX}, newBeforeY: {ceils[actualx, actualy].beforeY} ");
+                        if (isConsoleWrite) UnityEngine.Debug.Log($"createLabirynt(), w gï¿½rï¿½: actualx: {actualx}, actualy: {actualy}, newBeforeX: {ceils[actualx, actualy].beforeX}, newBeforeY: {ceils[actualx, actualy].beforeY} ");
                     }
                     else
                     {
@@ -146,7 +168,7 @@ public class buildSystem3 : MonoBehaviour
                             ceils[actualx, actualy].up = true;
                             ceils[actualx, actualy].beforeX = actualx;
                             ceils[actualx, actualy].beforeY = actualy + 1;
-                            if (isConsoleWrite) UnityEngine.Debug.Log($"createLabirynt(), w dó³: actualx: {actualx}, actualy: {actualy}, newBeforeX: {ceils[actualx, actualy].beforeX}, newBeforeY: {ceils[actualx, actualy].beforeY} ");
+                            if (isConsoleWrite) UnityEngine.Debug.Log($"createLabirynt(), w dï¿½: actualx: {actualx}, actualy: {actualy}, newBeforeX: {ceils[actualx, actualy].beforeX}, newBeforeY: {ceils[actualx, actualy].beforeY} ");
                         }
                         else
                         {
@@ -162,12 +184,12 @@ public class buildSystem3 : MonoBehaviour
                             }
                             else
                             {
-                                UnityEngine.Debug.Log("Coœ posz³o nie tak");
+                                //UnityEngine.Debug.Log("CoÅ› poszlo nie tak");
                                 int newActualX = ceils[actualx, actualy].beforeX;
                                 int newActualY = ceils[actualx, actualy].beforeY;
                                 actualx = newActualX;
                                 actualy = newActualY;
-                                if (isConsoleWrite) UnityEngine.Debug.Log($"createLabirynt(), cofniêcie do poprzedniego z powodu nieznanego b³êdu :(, actualx: {actualx}, actualy: {actualy} ");
+                                if (isConsoleWrite) UnityEngine.Debug.Log($"createLabirynt(), cofniï¿½cie do poprzedniego z powodu nieznanego bï¿½ï¿½du :(, actualx: {actualx}, actualy: {actualy} ");
                             }
                         }
                     }
@@ -310,7 +332,7 @@ public class buildSystem3 : MonoBehaviour
                             }
                             else
                             {
-                                UnityEngine.Debug.Log("pusty pokój"); 
+                                UnityEngine.Debug.Log("pusty pokuj"); 
                                 createRoom("", i - widthMinus, j - heightMinus, startx * 18, starty * 10);
                             }
                         }
