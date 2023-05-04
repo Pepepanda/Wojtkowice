@@ -757,6 +757,8 @@ MonoBehaviour:
   heightMinus: 7
   startx: 0
   starty: 0
+  chance: 10
+  maxLongSeed: 10
   roomsLUDR:
   - {fileID: 5773800327734354387, guid: c1a0655dda9e96e409cf61d8ed9b9826, type: 3}
   roomsLUD:
