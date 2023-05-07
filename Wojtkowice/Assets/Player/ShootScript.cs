@@ -33,7 +33,8 @@ public class ShootScript : MonoBehaviour
                 if (ammo != 0)
                 {
                     Shoot();
-                    ammo--;
+                    int subAmmo=Random.Range(1,4);
+                    ammo-=subAmmo;
                     ammoBar.SetAmmo(ammo);
                 }
             }
