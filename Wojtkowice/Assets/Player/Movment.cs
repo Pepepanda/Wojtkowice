@@ -16,7 +16,6 @@ public class Movment : MonoBehaviour
     void Start()
     {
        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-       Time.timeScale = 0f;
     }
 
     void Update()
