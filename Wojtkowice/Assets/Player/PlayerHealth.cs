@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 10;
+    public int maxHealth = 20;
     public int health;
     public HealthBar healthBar;
     // Start is called before the first frame update
@@ -27,6 +27,10 @@ public class PlayerHealth : MonoBehaviour
     public void GetHealth()
     {
         health +=5;
+        if (health > 20)
+        {
+            health = 20;
+        }
         healthBar.SetHealth(health);
     }
 }
