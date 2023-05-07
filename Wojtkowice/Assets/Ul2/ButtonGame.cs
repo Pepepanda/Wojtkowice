@@ -1,14 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ButtonGameOff : MonoBehaviour
+public class ButtonGame : MonoBehaviour
 {
-    public Canvas MenuCanvas;
-    void Start()
+    public void OnStartButtonClicked()
     {
-        MenuCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        SceneManager.LoadScene(1);
     }
     public void ExitGame()
     {
