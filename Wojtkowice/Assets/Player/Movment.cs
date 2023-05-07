@@ -9,11 +9,14 @@ public class Movment : MonoBehaviour
   private Camera mainCam;
   public float speed = 10f;
 
-   void Start(){
+   void Start()
+   {
        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+       Time.timeScale = 0f;
    }
 
-  void Update(){
+  void Update()
+  {
       Vector2 pos = transform.position;
 
       if(Input.GetKey("w")){
