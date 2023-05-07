@@ -13,7 +13,6 @@ public class PlayerHealth : MonoBehaviour
         health = maxHealth;
         healthBar.SetHealth(maxHealth);
     }
-
     //how much damage the player takes 
     public void TakeDamage(int damage)
     {
