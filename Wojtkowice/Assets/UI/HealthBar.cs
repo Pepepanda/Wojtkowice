@@ -10,7 +10,7 @@ public class HealthBar : MonoBehaviour
     public Slider slider;
     void Update()
     {
-        healthText.text = "HEALTH: " + healthBar;
+        healthText.text = ""+ healthBar;
         slider.value = healthBar;
     }
     public void SetHealth(int healthPoint)
