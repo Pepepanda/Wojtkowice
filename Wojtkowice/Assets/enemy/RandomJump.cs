@@ -4,31 +4,24 @@ using UnityEngine;
 
 public class RandomJump : MonoBehaviour
 {
-    public float moveSpeed = 3f; // Prêdkoœæ poruszania siê wroga
-
-    private Rigidbody2D rb;
-    private Vector2 movementDirection;
-
+    Rigidbody2D rb;
+    Vector3 Last;
+    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        GetRandomMovementDirection();
     }
 
+    // Update is called once per frame
     void Update()
     {
-        MoveEnemy();
+        Last = rb.velocity;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        var speed = Last.magnitude;
+        var direction = Vector3.Reflect(Last.normalized, collision.contacts[0].normal);
+        rb.velocity = direction * Mathf.Max(speed, 0f);
     }
 
-    void GetRandomMovementDirection()
-    {
-        float randomX = Random.Range(-1f, 1f);
-        float randomY = Random.Range(-1f, 1f);
-        movementDirection = new Vector2(randomX, randomY).normalized;
-    }
-
-    void MoveEnemy()
-    {
-        rb.velocity = movementDirection * moveSpeed;
-    }
 }

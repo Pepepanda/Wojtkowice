@@ -12,7 +12,7 @@ public class EnemyMovement : MonoBehaviour
     private float distance;
     void Start()
     {
-
+        player = GameObject.Find("Player");
     }
 
     void Update()

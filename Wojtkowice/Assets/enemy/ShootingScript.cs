@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class ShootingScript : MonoBehaviour
 {
-    public Transform target; // Reference to the player object
+    public GameObject target; // Reference to the player object
     public float szybkosc;
     public float predkoscPocisku;// Reference to the bullet prefab
     private Rigidbody2D rb;
     public float NajlepszyDystansDoWystrzeleniaPocisku;
-    public float DystansZaprzestaniaStrzelania;
     public Transform firingPoint;
     private float kiedyStrzelic;
     public Object bulletPrefab;
@@ -23,11 +22,17 @@ public class ShootingScript : MonoBehaviour
         if (!target)
         {
             GetTarget();
+         
         }
 
-        if (target != null && Vector2.Distance(target.position, transform.position) <= NajlepszyDystansDoWystrzeleniaPocisku)
+        /*if (target != null && Vector2.Distance(target.transform.position, transform.position) <= NajlepszyDystansDoWystrzeleniaPocisku)
         {
             Shoot();
+        }*/
+        else
+        {
+            Shoot();
+            Debug.Log("eeee");
         }
 
     }
@@ -41,25 +46,15 @@ public class ShootingScript : MonoBehaviour
         else
         {
             kiedyStrzelic -= Time.deltaTime;
+           
         }
     }
-    private void FixedUpdate()
-    {
-        if (target != null)
-        {
-            if (Vector2.Distance(target.position, transform.position) >= DystansZaprzestaniaStrzelania)
-            {
-                rb.velocity = transform.up * szybkosc;
-            }
-          
-        }
-
-    }
+    
     private void GetTarget()
     {
         if (GameObject.FindGameObjectWithTag("Player"))
         {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
+            target = GameObject.FindGameObjectWithTag("Player");
         }
     }
     
