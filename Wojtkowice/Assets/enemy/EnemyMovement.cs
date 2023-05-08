@@ -8,13 +8,11 @@ public class EnemyMovement : MonoBehaviour
     public GameObject player;
     public float speed;
     public float distanceBetween;
-
     private float distance;
     void Start()
     {
-
+        player = GameObject.Find("Player");
     }
-
     void Update()
     {
         //funkcja Vector2.Distance znajduje dystans pomiedzy transform.option(pozycja bia³ej kwadratu) i player.transform.position (pozycja gracza) , wtedy zwraca zmienna jako float
