@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 20;
-    public int health;
+    public int health = 10;
+    public int playerHealth;
     public HealthBar healthBar;
     // Start is called before the first frame update
     void Start()
     {
         healthBar = GameObject.Find("Health").GetComponent<HealthBar>();
-        health = maxHealth;
-        healthBar.SetHealth(maxHealth);
+        playerHealth = health;
+        healthBar.SetHealth(playerHealth);
     }
     //how much damage the player takes 
     public void TakeDamage(int damage)
     {
-        health -= damage;
-        healthBar.SetHealth(health);
+        playerHealth -= damage;
+        healthBar.SetHealth(playerHealth);
         //if the damage takes the player down to zero, then the player will be destroyed
         if(health <= 0)
         {
@@ -27,11 +27,11 @@ public class PlayerHealth : MonoBehaviour
     }
     public void GetHealth()
     {
-        health +=5;
-        if (health > 20)
+        playerHealth +=5;
+        if (playerHealth > 20)
         {
-            health = 20;
+            playerHealth = 20;
         }
-        healthBar.SetHealth(health);
+        healthBar.SetHealth(playerHealth);
     }
 }
