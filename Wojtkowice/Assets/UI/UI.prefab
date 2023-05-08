@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6306362541873536683}
   - component: {fileID: 6306362541873536681}
-  - component: {fileID: 6306362541873536680}
   - component: {fileID: 6306362541873536682}
   m_Layer: 5
   m_Name: Ammo
@@ -47,40 +46,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6306362541275925480}
   m_CullTransparentMesh: 1
---- !u!114 &6306362541873536680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6306362541275925480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.015686275, g: 0.7058824, b: 0.4117647, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 60
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 6
-    m_MaxSize: 60
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Ammo
 --- !u!114 &6306362541873536682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,8 +58,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35f682e5b935220459bcca87efe0b29d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoText: {fileID: 6306362541873536680}
+  ammoText: {fileID: 0}
   ammoBar: 0
+  slider: {fileID: 0}
 --- !u!1 &6306362542235880240
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +71,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6306362541357234366}
   - component: {fileID: 6306362541357234364}
-  - component: {fileID: 6306362541357234367}
   - component: {fileID: 6306362541357234361}
   m_Layer: 5
   m_Name: Health
@@ -142,40 +107,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6306362542235880240}
   m_CullTransparentMesh: 1
---- !u!114 &6306362541357234367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6306362542235880240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 60
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 6
-    m_MaxSize: 80
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Health
 --- !u!114 &6306362541357234361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,8 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f924ad9c20644247ba0bc6573d41bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 6306362541357234367}
+  healthText: {fileID: 0}
   healthBar: 0
+  slider: {fileID: 0}
 --- !u!1 &6306362542742437210
 GameObject:
   m_ObjectHideFlags: 0
