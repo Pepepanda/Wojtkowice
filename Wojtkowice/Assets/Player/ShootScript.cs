@@ -11,15 +11,15 @@ public class ShootScript : MonoBehaviour
     public GameObject Bullet;
     public float BulletSpeed;
     private Vector2 direction;
-    public int maxAmmo = 20;
-    public int ammo;
+    public int ammo = 20;
+    public int PlayerAmmo;
     public AmmoBar ammoBar;
     // Start is called before the first frame update
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        ammo = maxAmmo;
-        ammoBar.SetAmmo(ammo);
+        PlayerAmmo = ammo;
+        ammoBar.SetAmmo(PlayerAmmo);
     }
 
     // Update is called once per frame
@@ -28,15 +28,20 @@ public class ShootScript : MonoBehaviour
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
         direction = mousePos - (Vector2)Gun.position;
         FaceMouse();
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (ammo != 0)
+            if (Input.GetMouseButtonDown(0))
             {
-                Shoot();
-                ammo--;
-                ammoBar.SetAmmo(ammo);
+                if (PlayerAmmo != 0)
+                {
+                    Shoot();
+                    int subAmmo=Random.Range(1,4);
+                    PlayerAmmo-=subAmmo;
+                    if (PlayerAmmo<0)
+                    {
+                        PlayerAmmo=0;
+                    }
+                    ammoBar.SetAmmo(PlayerAmmo);
+                }
             }
-        }
     }
     void FaceMouse()
     {
@@ -44,13 +49,13 @@ public class ShootScript : MonoBehaviour
     }
     void Shoot()
     {
-        GameObject BulletIns = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
-        BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.right * BulletSpeed);
-        Destroy(BulletIns,1);
+            GameObject BulletIns = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
+            BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.right * BulletSpeed);
+            Destroy(BulletIns, 1);
     }
     public void GetAmmo()
     {
-        ammo = maxAmmo;
-        ammoBar.SetAmmo(ammo);
+        PlayerAmmo = ammo;
+        ammoBar.SetAmmo(PlayerAmmo);
     }
 }
