@@ -149,6 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  HealthPrefab: {fileID: 902675856507441310, guid: 22c4a265e8ec5b94a8e767674b090d59, type: 3}
+  AmmoPrefab: {fileID: 5397169401303133102, guid: bd922c8d586d7c14c811c0a80dc1e83b, type: 3}
 --- !u!114 &5116432854993683254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 3277024511537716464, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
 --- !u!114 &9114110044729940301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,6 +177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dc3252badc229a43986fe16562aeea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2730088344630268432, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+  player: {fileID: 3277024511537716467, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
   speed: 2
   distanceBetween: 12

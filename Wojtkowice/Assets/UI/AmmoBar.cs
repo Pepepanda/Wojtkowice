@@ -7,9 +7,11 @@ public class AmmoBar : MonoBehaviour
 {
     public Text ammoText;
     public int ammoBar;
+    public Slider slider;
     void Update()
     {
-        ammoText.text = "Ammo: " + ammoBar+"/20";
+        ammoText.text = ""+ammoBar;
+        slider.value = ammoBar;
     }
     public void SetAmmo(int ammoPoint)
     {

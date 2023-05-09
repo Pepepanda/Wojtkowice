@@ -7,9 +7,11 @@ public class HealthBar : MonoBehaviour
 {
     public Text healthText;
     public int healthBar;
+    public Slider slider;
     void Update()
     {
-        healthText.text = "HEALTH: " + healthBar;
+        healthText.text = ""+ healthBar;
+        slider.value = healthBar;
     }
     public void SetHealth(int healthPoint)
     {
