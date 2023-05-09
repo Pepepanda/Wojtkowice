@@ -7,28 +7,27 @@ using UnityEngine.SceneManagement;
 
 public class ButtonGame : MonoBehaviour
 {
-    //Start menu buttons
+    public GameObject mm, dm;
+    private void Start()
+    {
+        dm.SetActive(false);
+    }
     public void OnStartButtonClicked()
     {
         SceneManager.LoadScene(1);
-        Time.timeScale = 1f;
     }
     public void OnSettingsButtonClicked()
     {
-        SceneManager.LoadScene(2);
+        mm.SetActive(false);
+        dm.SetActive(true);
     }
     public void OnExitButtonClicked()
     {
         Application.Quit();
     }
-    //Die menu buttons
-    public void OnReloadButtonClicked()
+    public void Back()
     {
-        SceneManager.LoadScene(1);
-        Time.timeScale = 1f;
-    }
-    public void OnReturnToMenuButtonClicked()
-    {
-        SceneManager.LoadScene(0);
+        dm.SetActive(false);
+        mm.SetActive(true);
     }
 }
