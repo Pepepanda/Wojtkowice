@@ -15,8 +15,8 @@ public class EnemyMovement : MonoBehaviour
     }
     void Update()
     {
-        //funkcja Vector2.Distance znajduje dystans pomiedzy transform.option(pozycja bia³ej kwadratu) i player.transform.position (pozycja gracza) , wtedy zwraca zmienna jako float
-        distance = Vector2.Distance(transform.position, player.transform.position);//zeby ten wróg nie za szybko z³apal gracza stosujemy te dwie zmienne
+        //funkcja Vector2.Distance znajduje dystans pomiedzy transform.option(pozycja biaï¿½ej kwadratu) i player.transform.position (pozycja gracza) , wtedy zwraca zmienna jako float
+        distance = Vector2.Distance(transform.position, player.transform.position);//zeby ten wrï¿½g nie za szybko zï¿½apal gracza stosujemy te dwie zmienne
         Vector2 direction = player.transform.position - transform.position;
         direction.Normalize();
 
