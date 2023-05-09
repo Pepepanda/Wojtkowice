@@ -11,9 +11,13 @@ public class EnemyTeleport : MonoBehaviour
     void Start()
     {
         StartCoroutine(waiter());
-        player = GameObject.Find("Player"); 
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
     IEnumerator waiter()
     {
         yield return new WaitForSeconds(cooldown);
