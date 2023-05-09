@@ -7,9 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class ButtonGame : MonoBehaviour
 {
+    //Start menu buttons
     public void OnStartButtonClicked()
     {
         SceneManager.LoadScene(1);
+        Time.timeScale = 1f;
     }
     public void OnSettingsButtonClicked()
     {
@@ -18,5 +20,15 @@ public class ButtonGame : MonoBehaviour
     public void OnExitButtonClicked()
     {
         Application.Quit();
+    }
+    //Die menu buttons
+    public void OnReloadButtonClicked()
+    {
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1f;
+    }
+    public void OnReturnToMenuButtonClicked()
+    {
+        SceneManager.LoadScene(0);
     }
 }
