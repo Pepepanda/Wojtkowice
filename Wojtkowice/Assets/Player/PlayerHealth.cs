@@ -21,10 +21,10 @@ public class PlayerHealth : MonoBehaviour
         playerHealth -= damage;
         healthBar.SetHealth(playerHealth);
         //if the damage takes the player down to zero, then the player will be destroyed
-        if(health <= 0)
+        if(playerHealth <= 0)
         {
-            Time.timeScale = 0f;
             DieMenu.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
     public void GetHealth()
