@@ -22,7 +22,7 @@ public class ShootingScript : MonoBehaviour
         if (!target)
         {
             GetTarget();
-         
+
         }
 
         /*if (target != null && Vector2.Distance(target.transform.position, transform.position) <= NajlepszyDystansDoWystrzeleniaPocisku)
@@ -46,10 +46,10 @@ public class ShootingScript : MonoBehaviour
         else
         {
             kiedyStrzelic -= Time.deltaTime;
-           
+
         }
     }
-    
+
     private void GetTarget()
     {
         if (GameObject.FindGameObjectWithTag("Player"))
@@ -57,7 +57,10 @@ public class ShootingScript : MonoBehaviour
             target = GameObject.FindGameObjectWithTag("Player");
         }
     }
-    
 }
+
+
+
+
 
 

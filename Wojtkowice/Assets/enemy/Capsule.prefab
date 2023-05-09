@@ -16,6 +16,9 @@ GameObject:
   - component: {fileID: 4351106849553325178}
   - component: {fileID: 3240440985713252272}
   - component: {fileID: -6732181573951816361}
+  - component: {fileID: 1987330560061504040}
+  - component: {fileID: -8504667395090941293}
+  - component: {fileID: 2624119963279035551}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Enemy
@@ -117,7 +120,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.0001
+  m_Mass: 0.43052232
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -154,13 +157,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d3b4afc4569154dace84ba8006a961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 3277024511537716461, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
-  szybkosc: 3
+  target: {fileID: 3277024511537716467, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+  szybkosc: 2
   predkoscPocisku: 2
   NajlepszyDystansDoWystrzeleniaPocisku: 5
-  DystansZaprzestaniaStrzelania: 5
   firingPoint: {fileID: 1747207045845012472, guid: 8cdd843a4f9300749a5a7a0f30ffefef, type: 3}
-  bulletPrefab: {fileID: 3272725819982837035, guid: 6f9b386392b157d469d5101a382425a2, type: 3}
+  bulletPrefab: {fileID: 2282346706396076649, guid: 6f9b386392b157d469d5101a382425a2, type: 3}
 --- !u!114 &3240440985713252272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,3 +188,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+--- !u!114 &1987330560061504040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4672238118746279157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc3252badc229a43986fe16562aeea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3277024511537716467, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+  speed: 2
+  distanceBetween: 4
+--- !u!114 &-8504667395090941293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4672238118746279157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e58c4ac3917db004e895840bec15b89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  HealthPrefab: {fileID: 902675856507441310, guid: 22c4a265e8ec5b94a8e767674b090d59, type: 3}
+  AmmoPrefab: {fileID: 5397169401303133102, guid: bd922c8d586d7c14c811c0a80dc1e83b, type: 3}
+--- !u!114 &2624119963279035551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4672238118746279157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a401253c9ebe7754fb589dcba6e1e673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  playerHealth: {fileID: 0}

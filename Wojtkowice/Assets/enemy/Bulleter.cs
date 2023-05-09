@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bulleter : MonoBehaviour
 {
+    public GameObject target;
     public float speed;
     public int damage;
 
@@ -12,9 +13,10 @@ public class Bulleter : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = -transform.right * speed;
-
-        Destroy(gameObject, 5f);
+        target = GameObject.FindGameObjectWithTag("Player");
+        Vector2 move = (target.transform.position - transform.position).normalized * speed;
+        rb.velocity = new Vector2(move.x, move.y);
+        Destroy(rb, 5f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
