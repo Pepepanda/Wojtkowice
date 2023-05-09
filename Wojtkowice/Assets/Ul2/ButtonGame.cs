@@ -31,4 +31,14 @@ public class ButtonGame : MonoBehaviour
         dm.SetActive(false);
         mm.SetActive(true);
     }
+    //Die menu buttons
+    public void OnReloadButtonClicked()
+    {
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1f;
+    }
+    public void OnReturnToMenuButtonClicked()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

@@ -987,9 +987,6 @@ MonoBehaviour:
   chance: 10
   maxLongSeed: 10
   isFirstOpen: 0
-  minEnemies: 1
-  maxEnemies: 4
-  numberEnemies: 0
   enemies:
   - {fileID: 9114110044729940302, guid: 91ca88139a619594d8d09c9c3582e604, type: 3}
   roomsLUDR:
