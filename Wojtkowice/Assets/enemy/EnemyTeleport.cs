@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class EnemyTeleport : MonoBehaviour
 {
-    public GameObject player;
+    GameObject player;
     public float speed;
     public float cooldown;
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player");
         StartCoroutine(waiter());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     IEnumerator waiter()
     {
