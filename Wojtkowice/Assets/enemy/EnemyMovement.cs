@@ -25,5 +25,6 @@ public class EnemyMovement : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
         }
+
     }
 }

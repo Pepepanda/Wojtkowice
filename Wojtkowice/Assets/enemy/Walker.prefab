@@ -179,4 +179,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 3277024511537716467, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
   speed: 2
-  distanceBetween: 2
+  distanceBetween: 20
