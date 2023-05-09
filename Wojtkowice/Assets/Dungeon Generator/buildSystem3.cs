@@ -6,13 +6,19 @@ public class buildSystem3 : MonoBehaviour
 {
 
     private System.Random rand = new System.Random();
-    System.Random random;
+    public System.Random random;
     public string seed;
     public bool isConsoleWrite; 
     public int widthPlus, widthMinus, heightPlus, heightMinus;
     private int actualx, actualy;
     public int startx, starty;
-    public int chance, maxLongSeed; 
+    public int chance, maxLongSeed;
+    public bool isFirstOpen;
+    public int minEnemies, maxEnemies; 
+
+    public int numberEnemies; 
+    [SerializeField]
+    public GameObject[] enemies;
 
     int numberRoomsLUDR;
     [SerializeField]
@@ -76,7 +82,9 @@ public class buildSystem3 : MonoBehaviour
             }
         }
 
+        isFirstOpen = false; 
         random = new System.Random((!string.IsNullOrEmpty(seed)) ? seed.GetHashCode() : System.Guid.NewGuid().GetHashCode());
+        numberEnemies = enemies.Length;
         numberRoomsLUDR = roomsLUDR.Length;
         numberRoomsLUD = roomsLUD.Length;
         numberRoomsLUR = roomsLUR.Length;
