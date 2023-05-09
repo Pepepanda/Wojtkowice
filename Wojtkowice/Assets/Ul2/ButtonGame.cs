@@ -7,16 +7,27 @@ using UnityEngine.SceneManagement;
 
 public class ButtonGame : MonoBehaviour
 {
+    public GameObject mm, dm;
+    private void Start()
+    {
+        dm.SetActive(false);
+    }
     public void OnStartButtonClicked()
     {
         SceneManager.LoadScene(1);
     }
     public void OnSettingsButtonClicked()
     {
-        SceneManager.LoadScene(2);
+        mm.SetActive(false);
+        dm.SetActive(true);
     }
     public void OnExitButtonClicked()
     {
         Application.Quit();
+    }
+    public void Back()
+    {
+        dm.SetActive(false);
+        mm.SetActive(true);
     }
 }
