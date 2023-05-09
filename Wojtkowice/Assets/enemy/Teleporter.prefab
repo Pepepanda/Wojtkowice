@@ -152,7 +152,6 @@ MonoBehaviour:
   player: {fileID: 3277024511537716467, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
   speed: 5
   distanceBetween: 0
-  cooldown: 3
 --- !u!114 &7684302025644837752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2826d1548bcf9b3418ee8a20b6c949c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 3277024511537716467, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+  player: {fileID: 0}
   speed: 50
-  cooldown: 3
+  cooldown: 0.1
