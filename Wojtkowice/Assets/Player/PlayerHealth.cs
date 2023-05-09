@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
     public int health = 10;
     public int playerHealth;
     public HealthBar healthBar;
+    public GameObject DieMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,8 @@ public class PlayerHealth : MonoBehaviour
         //if the damage takes the player down to zero, then the player will be destroyed
         if(health <= 0)
         {
-            Destroy(gameObject);
+            Time.timeScale = 0f;
+            DieMenu.SetActive(true);
         }
     }
     public void GetHealth()

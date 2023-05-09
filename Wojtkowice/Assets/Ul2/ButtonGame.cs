@@ -15,6 +15,7 @@ public class ButtonGame : MonoBehaviour
     public void OnStartButtonClicked()
     {
         SceneManager.LoadScene(1);
+        Time.timeScale=1f;
     }
     public void OnSettingsButtonClicked()
     {
