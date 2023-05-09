@@ -14,7 +14,6 @@ public class ShootScript : MonoBehaviour
     public int ammo = 50;
     public int PlayerAmmo;
     public AmmoBar ammoBar;
-    public GameObject DieMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,23 +28,20 @@ public class ShootScript : MonoBehaviour
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
         direction = mousePos - (Vector2)Gun.position;
         FaceMouse();
-        if (!DieMenu.activeSelf)
-        {
             if (Input.GetMouseButtonDown(0))
             {
                 if (PlayerAmmo != 0)
                 {
                     Shoot();
-                    int subAmmo = Random.Range(1, 4);
-                    PlayerAmmo -= subAmmo;
-                    if (PlayerAmmo < 0)
+                    int subAmmo=Random.Range(1,4);
+                    PlayerAmmo-=subAmmo;
+                    if (PlayerAmmo<0)
                     {
-                        PlayerAmmo = 0;
+                        PlayerAmmo=0;
                     }
                     ammoBar.SetAmmo(PlayerAmmo);
                 }
             }
-        }
     }
     void FaceMouse()
     {
