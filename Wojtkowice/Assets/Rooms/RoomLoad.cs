@@ -26,11 +26,12 @@ public class RoomLoad : MonoBehaviour
         {
 
         }
+        numberEnemies = 1; 
     }
 
     void Update()
     {
-        if(!isDestroy && isOpen && numberEnemies == 0)
+        if(!isDestroy && isOpen && numberEnemies <= 0)
         {
             isDestroy = true; 
             Destroy(transform.Find("doors").gameObject); 
@@ -51,6 +52,7 @@ public class RoomLoad : MonoBehaviour
                 if (!build.isFirstOpen)
                 {
                     build.isFirstOpen = true;
+                    numberEnemies = 0; 
                 }
                 else
                 {
@@ -70,7 +72,7 @@ public class RoomLoad : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            numberEnemies--; 
+            numberEnemies -= 1; 
         }
         if (collision.gameObject.tag == "Player")
         {
