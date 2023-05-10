@@ -17,7 +17,7 @@ public class RoomLoad : MonoBehaviour
         build = GameObject.Find("Game Manager").GetComponent<buildSystem3>();
         for (int i = 0; i <= transform.childCount - 1; i++)
         {
-            transform.GetChild(i).gameObject.SetActive(false);
+            //transform.GetChild(i).gameObject.SetActive(false);
         }
 
         string nazwaGameObjectu = gameObject.name;

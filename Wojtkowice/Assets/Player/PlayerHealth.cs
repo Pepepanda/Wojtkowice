@@ -24,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
         if(playerHealth <= 0)
         {
             DieMenu.SetActive(true);
+            Destroy(gameObject);
             Time.timeScale = 0f;
         }
     }

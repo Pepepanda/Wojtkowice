@@ -20,11 +20,11 @@ public class EnemyDie : MonoBehaviour
     {
         Destroy(gameObject);
         int randomNum = Random.Range(0, 100);
-        if (randomNum <= 10) // 10% ammo chance
+        if (randomNum <= 20) // 20% ammo chance
         {
             Instantiate(AmmoPrefab, transform.position, Quaternion.identity);
         }
-        else if (randomNum > 10 && randomNum <= 20)// 10% health chance
+        else if (randomNum >= 60)// 40% health chance
         {
             Instantiate(HealthPrefab, transform.position, Quaternion.identity);
         }
