@@ -1332,10 +1332,8 @@ MonoBehaviour:
   minEnemies: 1
   maxEnemies: 4
   numberEnemies: 0
-  enemies:
-  - {fileID: 9114110044729940302, guid: 91ca88139a619594d8d09c9c3582e604, type: 3}
-  - {fileID: 7587763005932109726, guid: 5b924ff61a7470141ad3dc7ff411e9dc, type: 3}
-  - {fileID: 2369372569954915358, guid: aed96d52b57313642be77eb4b7c14ba6, type: 3}
+  insides:
+  - {fileID: 4744320690564428626, guid: 97acefb140ec5c24f95b9499ee4192f5, type: 3}
   roomsLUDR:
   - {fileID: 5773800327734354387, guid: c1a0655dda9e96e409cf61d8ed9b9826, type: 3}
   roomsLUD:
@@ -2388,9 +2386,6 @@ MonoBehaviour:
   m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: 10
-  m_MaxValue: 100
-  m_WholeNumbers: 1
-  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
