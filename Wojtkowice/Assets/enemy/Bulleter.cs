@@ -15,10 +15,6 @@ public class Bulleter : MonoBehaviour
         target = GameObject.Find("Player");
         Vector2 move = (target.transform.position - transform.position).normalized * speed;
         rb.velocity = new Vector2(move.x, move.y);
-        Destroy(this.gameObject, 5f);
-        target = GameObject.FindGameObjectWithTag("Player");
-        Vector2 move = (target.transform.position - transform.position).normalized * speed;
-        rb.velocity = new Vector2(move.x, move.y);
         Destroy(rb, 5f);
     }
 

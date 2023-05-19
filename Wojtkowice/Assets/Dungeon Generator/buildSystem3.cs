@@ -18,7 +18,7 @@ public class buildSystem3 : MonoBehaviour
 
     public int numberEnemies; 
     [SerializeField]
-    public GameObject[] enemies;
+    public GameObject[] insides;
 
     int numberRoomsLUDR;
     [SerializeField]
@@ -84,7 +84,6 @@ public class buildSystem3 : MonoBehaviour
 
         isFirstOpen = false; 
         random = new System.Random((!string.IsNullOrEmpty(seed)) ? seed.GetHashCode() : System.Guid.NewGuid().GetHashCode());
-        numberEnemies = enemies.Length;
         numberRoomsLUDR = roomsLUDR.Length;
         numberRoomsLUD = roomsLUD.Length;
         numberRoomsLUR = roomsLUR.Length;
