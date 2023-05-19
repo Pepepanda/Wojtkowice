@@ -23,8 +23,9 @@ public class PlayerHealth : MonoBehaviour
         //if the damage takes the player down to zero, then the player will be destroyed
         if(playerHealth <= 0)
         {
-            Time.timeScale = 0f;
             DieMenu.SetActive(true);
+            Destroy(gameObject);
+            Time.timeScale = 0f;
         }
     }
     public void GetHealth()

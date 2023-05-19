@@ -25,6 +25,11 @@ public class EnemyDie : MonoBehaviour
             Instantiate(AmmoPrefab, transform.position, Quaternion.identity);
         }
         else // 50% health chance
+        if (randomNum <= 20) // 20% ammo chance
+        {
+            Instantiate(AmmoPrefab, transform.position, Quaternion.identity);
+        }
+        else if (randomNum >= 60)// 40% health chance
         {
             Instantiate(HealthPrefab, transform.position, Quaternion.identity);
         }

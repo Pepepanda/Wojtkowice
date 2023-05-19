@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyTeleport : MonoBehaviour
 {
     public GameObject player;
+    GameObject player;
     public float speed;
     public float cooldown;
     // Start is called before the first frame update
@@ -13,7 +14,9 @@ public class EnemyTeleport : MonoBehaviour
         StartCoroutine(waiter());
         player = GameObject.Find("Player"); 
     }
-
+        player = GameObject.Find("Player");
+        StartCoroutine(waiter());
+    }
     IEnumerator waiter()
     {
         yield return new WaitForSeconds(cooldown);
@@ -21,4 +24,5 @@ public class EnemyTeleport : MonoBehaviour
         transform.position = move;
         StartCoroutine(waiter());
     }
+}
 }

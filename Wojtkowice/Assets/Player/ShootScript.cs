@@ -11,7 +11,7 @@ public class ShootScript : MonoBehaviour
     public GameObject Bullet;
     public float BulletSpeed;
     private Vector2 direction;
-    public int ammo = 50;
+    public int ammo = 100;
     public int PlayerAmmo;
     public AmmoBar ammoBar;
     public GameObject DieMenu;
