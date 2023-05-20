@@ -33,7 +33,9 @@ public class GenerateEnemies : MonoBehaviour
                 for (int i = 0; i < random; i++)
                 {
                     GameObject newEnemy = Instantiate(enemies[build.random.Next(enemies.Length)], new Vector2((build.startx * 18) + (x * 18), (build.starty * 10) + (y * 10)), Quaternion.identity) as GameObject;
-                    newEnemy.transform.parent = this.transform;
+                    newEnemy.transform.parent = this.transform.parent; 
+                    SpriteRenderer spriteRenderer = newEnemy.GetComponent<SpriteRenderer>();
+                    spriteRenderer.sortingOrder = 1;
                 }
             }
         }
