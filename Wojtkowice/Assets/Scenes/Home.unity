@@ -1334,6 +1334,10 @@ MonoBehaviour:
   numberEnemies: 0
   insides:
   - {fileID: 4744320690564428626, guid: 97acefb140ec5c24f95b9499ee4192f5, type: 3}
+  - {fileID: 4744320690564428626, guid: 6df03641459e3e14f9fcf8f248ab130a, type: 3}
+  - {fileID: 4744320690564428626, guid: 6df03641459e3e14f9fcf8f248ab130a, type: 3}
+  - {fileID: 4744320690564428626, guid: 6df03641459e3e14f9fcf8f248ab130a, type: 3}
+  - {fileID: 4744320690564428626, guid: 6df03641459e3e14f9fcf8f248ab130a, type: 3}
   roomsLUDR:
   - {fileID: 5773800327734354387, guid: c1a0655dda9e96e409cf61d8ed9b9826, type: 3}
   roomsLUD:
@@ -2792,7 +2796,7 @@ PrefabInstance:
       objectReference: {fileID: 1018391143}
     - target: {fileID: 3277024511537716463, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: m_Mass
-      value: 250
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3277024511537716464, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: DieMenu

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3815904875563177427}
   - component: {fileID: 7049000625870429188}
   m_Layer: 0
-  m_Name: Room1
+  m_Name: Room2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,14 +52,11 @@ MonoBehaviour:
   x: 0
   y: 0
   isOpen: 0
-  minEnemies: 2
-  maxEnemies: 3
+  minEnemies: 1
+  maxEnemies: 1
   enemies:
-  - {fileID: 7587763005932109726, guid: 5b924ff61a7470141ad3dc7ff411e9dc, type: 3}
-  - {fileID: 7587763005932109726, guid: 5b924ff61a7470141ad3dc7ff411e9dc, type: 3}
-  - {fileID: 9114110044729940302, guid: 91ca88139a619594d8d09c9c3582e604, type: 3}
-  - {fileID: 9114110044729940302, guid: 91ca88139a619594d8d09c9c3582e604, type: 3}
-  - {fileID: 9114110044729940302, guid: 91ca88139a619594d8d09c9c3582e604, type: 3}
+  - {fileID: 4231773959875460767, guid: 1d831afc91901ea49b36fa4cc5535f85, type: 3}
+  - {fileID: 2282346706396076649, guid: 6f9b386392b157d469d5101a382425a2, type: 3}
 --- !u!50 &3815904875563177427
 Rigidbody2D:
   serializedVersion: 4
