@@ -111,7 +111,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
-  m_Constraints: 4
 --- !u!61 &-2728713778770327099
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -181,7 +180,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
-  damage: 1
   playerHealth: {fileID: 3277024511537716464, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
 --- !u!114 &-6286778551631253166
 MonoBehaviour:
@@ -196,7 +194,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  speed: 50
-  cooldown: 0.1
-  speed: 1500
+  speed: 2000
   cooldown: 3
