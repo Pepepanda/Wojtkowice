@@ -12,7 +12,7 @@ public class Bulleter : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        target = GameObject.FindGameObjectWithTag("Player");
+        target = GameObject.Find("Player");
         Vector2 move = (target.transform.position - transform.position).normalized * speed;
         rb.velocity = new Vector2(move.x, move.y);
         Destroy(rb, 5f);

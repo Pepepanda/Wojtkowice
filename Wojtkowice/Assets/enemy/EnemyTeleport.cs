@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyTeleport : MonoBehaviour
 {
-    GameObject player;
+    public GameObject player;
     public float speed;
     public float cooldown;
     // Start is called before the first frame update
