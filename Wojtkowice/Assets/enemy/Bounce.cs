@@ -25,7 +25,7 @@ public class Bounce : MonoBehaviour
     }
     IEnumerator waiter()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.25f);
         int x = Random.Range(200, 500) + 1;
         int y = Random.Range(200, 500) + 1;
         rb.AddForce(new Vector2(x, y));
