@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoomLoad : MonoBehaviour
 {
-    public bool isOpen, isDestroy;
+    public bool isOpen, isDestroy, isBoss;
     public buildSystem3 build;
     public int numberEnemies;
     public int x, y;
@@ -17,7 +17,7 @@ public class RoomLoad : MonoBehaviour
         build = GameObject.Find("Game Manager").GetComponent<buildSystem3>();
         for (int i = 0; i <= transform.childCount - 1; i++)
         {
-            transform.GetChild(i).gameObject.SetActive(false);
+            //transform.GetChild(i).gameObject.SetActive(false);
         }
         numberEnemies = 0;
         string nazwaGameObjectu = transform.gameObject.name;

@@ -151,6 +151,7 @@ public class buildSystem3 : MonoBehaviour
                     ceils[actualx, actualy].right = true;
                     ceils[actualx, actualy].beforeX = actualx + 1;
                     ceils[actualx, actualy].beforeY = actualy;
+                    ceils[actualx, actualy].which = ceils[actualx + 1, actualy].which + 1; 
                     if (isConsoleWrite) UnityEngine.Debug.Log($"createLabirynt(), w lewo: actualx: {actualx}, actualy: {actualy}, newBeforeX: {ceils[actualx, actualy].beforeX}, newBeforeY: {ceils[actualx, actualy].beforeY} ");
                 }
                 else
@@ -163,6 +164,7 @@ public class buildSystem3 : MonoBehaviour
                         ceils[actualx, actualy].down = true;
                         ceils[actualx, actualy].beforeX = actualx;
                         ceils[actualx, actualy].beforeY = actualy - 1;
+                        ceils[actualx, actualy].which = ceils[actualx, actualy - 1].which + 1;
                         if (isConsoleWrite) UnityEngine.Debug.Log($"createLabirynt(), w g�r�: actualx: {actualx}, actualy: {actualy}, newBeforeX: {ceils[actualx, actualy].beforeX}, newBeforeY: {ceils[actualx, actualy].beforeY} ");
                     }
                     else
@@ -175,6 +177,7 @@ public class buildSystem3 : MonoBehaviour
                             ceils[actualx, actualy].up = true;
                             ceils[actualx, actualy].beforeX = actualx;
                             ceils[actualx, actualy].beforeY = actualy + 1;
+                            ceils[actualx, actualy].which = ceils[actualx, actualy + 1].which + 1;
                             if (isConsoleWrite) UnityEngine.Debug.Log($"createLabirynt(), w d�: actualx: {actualx}, actualy: {actualy}, newBeforeX: {ceils[actualx, actualy].beforeX}, newBeforeY: {ceils[actualx, actualy].beforeY} ");
                         }
                         else
@@ -187,6 +190,7 @@ public class buildSystem3 : MonoBehaviour
                                 ceils[actualx, actualy].left = true;
                                 ceils[actualx, actualy].beforeX = actualx - 1;
                                 ceils[actualx, actualy].beforeY = actualy;
+                                ceils[actualx, actualy].which = ceils[actualx - 1, actualy].which + 1;
                                 if (isConsoleWrite) UnityEngine.Debug.Log($"createLabirynt(), w prawo: actualx: {actualx}, actualy: {actualy}, newBeforeX: {ceils[actualx, actualy].beforeX}, newBeforeY: {ceils[actualx, actualy].beforeY} ");
                             }
                             else
@@ -234,19 +238,53 @@ public class buildSystem3 : MonoBehaviour
 
     void activateLabirynt()
     {
-        for(int i = 0; i <= widthPlus + widthMinus; i++)
+        int maxWhich = 0;
+        for (int i = 0; i <= widthPlus + widthMinus; i++)
         {
-            for(int j = 0; j <= heightPlus + heightMinus; j++)
+            for (int j = 0; j <= heightPlus + heightMinus; j++)
             {
-                if(ceils[i, j].left)
+                if (ceils[i, j].which > maxWhich)
                 {
-                    if(ceils[i, j].up)
+                    maxWhich = ceils[i, j].which;
+                }
+            }
+        }
+
+        bool isExit = false; 
+        for (int i = 0; i <= widthPlus + widthMinus; i++)
+        {
+            if(isExit)
+            {
+                break; 
+            }
+            for (int j = 0; j <= heightPlus + heightMinus; j++)
+            {
+                if(isExit)
+                {
+                    break; 
+                }
+                if (ceils[i, j].which == maxWhich)
+                {
+                    ceils[i, j].isBoss = true;
+                    isExit = true;
+                    break; 
+                }
+            }
+        }
+
+        for (int i = 0; i <= widthPlus + widthMinus; i++)
+        {
+            for (int j = 0; j <= heightPlus + heightMinus; j++)
+            {
+                if (ceils[i, j].left)
+                {
+                    if (ceils[i, j].up)
                     {
-                        if(ceils[i, j].down)
+                        if (ceils[i, j].down)
                         {
-                            if(ceils[i, j].right)
+                            if (ceils[i, j].right)
                             {
-                                createRoom("LUDR", i - widthMinus, j - heightMinus, startx * 18, starty * 10); 
+                                createRoom("LUDR", i - widthMinus, j - heightMinus, startx * 18, starty * 10);
                             }
                             else
                             {
@@ -339,7 +377,7 @@ public class buildSystem3 : MonoBehaviour
                             }
                             else
                             {
-                                UnityEngine.Debug.Log("pusty pokuj"); 
+                                UnityEngine.Debug.Log("pusty pokuj");
                                 createRoom("", i - widthMinus, j - heightMinus, startx * 18, starty * 10);
                             }
                         }
@@ -351,95 +389,79 @@ public class buildSystem3 : MonoBehaviour
 
     void createRoom(string nameOfRoom, int x, int y, int StartX, int StartY)
     {
+        GameObject newCeil; 
         if (nameOfRoom == "LUDR")
         {
-            GameObject newCeil = Instantiate(roomsLUDR[rand.Next(numberRoomsLUDR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
-            newCeil.name = string.Format("Ceil({0}, {1})", x, y);
-            newCeil.transform.parent = this.transform;
+            newCeil = Instantiate(roomsLUDR[rand.Next(numberRoomsLUDR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
         }
         else if (nameOfRoom == "LUD")
         {
-            GameObject newCeil = Instantiate(roomsLUD[rand.Next(numberRoomsLUD)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
-            newCeil.name = string.Format("Ceil({0}, {1})", x, y);
-            newCeil.transform.parent = this.transform;
+            newCeil = Instantiate(roomsLUD[rand.Next(numberRoomsLUD)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
         }
         else if (nameOfRoom == "LUR")
         {
-            GameObject newCeil = Instantiate(roomsLUR[rand.Next(numberRoomsLUR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
-            newCeil.name = string.Format("Ceil({0}, {1})", x, y);
-            newCeil.transform.parent = this.transform;
+            newCeil = Instantiate(roomsLUR[rand.Next(numberRoomsLUR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
         }
         else if (nameOfRoom == "LDR")
         {
-            GameObject newCeil = Instantiate(roomsLDR[rand.Next(numberRoomsLDR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
-            newCeil.name = string.Format("Ceil({0}, {1})", x, y);
-            newCeil.transform.parent = this.transform;
+            newCeil = Instantiate(roomsLDR[rand.Next(numberRoomsLDR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
         }
         else if (nameOfRoom == "UDR")
         {
-            GameObject newCeil = Instantiate(roomsUDR[rand.Next(numberRoomsUDR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
-            newCeil.name = string.Format("Ceil({0}, {1})", x, y);
-            newCeil.transform.parent = this.transform;
+            newCeil = Instantiate(roomsUDR[rand.Next(numberRoomsUDR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
         }
         else if (nameOfRoom == "LU")
         {
-            GameObject newCeil = Instantiate(roomsLU[rand.Next(numberRoomsLU)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
-            newCeil.name = string.Format("Ceil({0}, {1})", x, y);
-            newCeil.transform.parent = this.transform;
+            newCeil = Instantiate(roomsLU[rand.Next(numberRoomsLU)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
         }
         else if (nameOfRoom == "UR")
         {
-            GameObject newCeil = Instantiate(roomsUR[rand.Next(numberRoomsUR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
-            newCeil.name = string.Format("Ceil({0}, {1})", x, y);
-            newCeil.transform.parent = this.transform;
+            newCeil = Instantiate(roomsUR[rand.Next(numberRoomsUR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
         }
         else if (nameOfRoom == "LD")
         {
-            GameObject newCeil = Instantiate(roomsLD[rand.Next(numberRoomsLD)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
-            newCeil.name = string.Format("Ceil({0}, {1})", x, y);
-            newCeil.transform.parent = this.transform;
+            newCeil = Instantiate(roomsLD[rand.Next(numberRoomsLD)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
         }
         else if (nameOfRoom == "DR")
         {
-            GameObject newCeil = Instantiate(roomsDR[rand.Next(numberRoomsDR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
-            newCeil.name = string.Format("Ceil({0}, {1})", x, y);
-            newCeil.transform.parent = this.transform;
+            newCeil = Instantiate(roomsDR[rand.Next(numberRoomsDR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
         }
         else if (nameOfRoom == "UD")
         {
-            GameObject newCeil = Instantiate(roomsUD[rand.Next(numberRoomsUD)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
-            newCeil.name = string.Format("Ceil({0}, {1})", x, y);
-            newCeil.transform.parent = this.transform;
+            newCeil = Instantiate(roomsUD[rand.Next(numberRoomsUD)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
         }
         else if (nameOfRoom == "LR")
         {
-            GameObject newCeil = Instantiate(roomsLR[rand.Next(numberRoomsLR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
-            newCeil.name = string.Format("Ceil({0}, {1})", x, y);
-            newCeil.transform.parent = this.transform;
+            newCeil = Instantiate(roomsLR[rand.Next(numberRoomsLR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
         }
         else if (nameOfRoom == "L")
         {
-            GameObject newCeil = Instantiate(roomsL[rand.Next(numberRoomsL)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
-            newCeil.name = string.Format("Ceil({0}, {1})", x, y);
-            newCeil.transform.parent = this.transform;
+            newCeil = Instantiate(roomsL[rand.Next(numberRoomsL)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
         }
         else if (nameOfRoom == "U")
         {
-            GameObject newCeil = Instantiate(roomsU[rand.Next(numberRoomsU)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
-            newCeil.name = string.Format("Ceil({0}, {1})", x, y);
-            newCeil.transform.parent = this.transform;
+            newCeil = Instantiate(roomsU[rand.Next(numberRoomsU)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
         }
         else if (nameOfRoom == "D")
         {
-            GameObject newCeil = Instantiate(roomsD[rand.Next(numberRoomsD)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
-            newCeil.name = string.Format("Ceil({0}, {1})", x, y);
-            newCeil.transform.parent = this.transform;
+            newCeil = Instantiate(roomsD[rand.Next(numberRoomsD)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
         }
         else if (nameOfRoom == "R")
         {
-            GameObject newCeil = Instantiate(roomsR[rand.Next(numberRoomsR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
-            newCeil.name = string.Format("Ceil({0}, {1})", x, y);
-            newCeil.transform.parent = this.transform;
+            newCeil = Instantiate(roomsR[rand.Next(numberRoomsR)], new Vector2(StartX + (x * 18), StartY + (y * 10)), Quaternion.identity) as GameObject;
+        }
+        else
+        {
+            newCeil = null; 
+        }
+
+        newCeil.name = string.Format("Ceil({0}, {1})", x, y);
+        newCeil.transform.parent = this.transform;
+
+        if (ceils[x + startx + widthMinus, y + starty + heightMinus].isBoss)
+        {
+            RoomLoad rl = newCeil.GetComponent<RoomLoad>();
+            rl.isBoss = true;
         }
     }
 }
