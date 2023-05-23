@@ -58,8 +58,16 @@ public class RoomLoad : MonoBehaviour
                 }
                 else
                 {
-                    GameObject newInsides = Instantiate(build.insides[build.random.Next(build.insides.Length)], new Vector2((build.startx * 18) + (x * 18), (build.starty * 10) + (y * 10)), Quaternion.identity) as GameObject;
-                    newInsides.transform.parent = this.transform;
+                    if (isBoss)
+                    {
+                        GameObject newInsides = Instantiate(build.bosses[build.random.Next(build.bosses.Length)], new Vector2((build.startx * 18) + (x * 18), (build.starty * 10) + (y * 10)), Quaternion.identity) as GameObject;
+                        newInsides.transform.parent = this.transform;
+                    }
+                    else
+                    {
+                        GameObject newInsides = Instantiate(build.insides[build.random.Next(build.insides.Length)], new Vector2((build.startx * 18) + (x * 18), (build.starty * 10) + (y * 10)), Quaternion.identity) as GameObject;
+                        newInsides.transform.parent = this.transform;
+                    }
                 }
             }
         }

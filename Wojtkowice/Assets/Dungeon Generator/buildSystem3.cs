@@ -14,11 +14,11 @@ public class buildSystem3 : MonoBehaviour
     public int startx, starty;
     public int chance, maxLongSeed;
     public bool isFirstOpen;
-    public int minEnemies, maxEnemies; 
-
-    public int numberEnemies; 
+    
     [SerializeField]
     public GameObject[] insides;
+    [SerializeField]
+    public GameObject[] bosses;
 
     int numberRoomsLUDR;
     [SerializeField]

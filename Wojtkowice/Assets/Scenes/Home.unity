@@ -1245,14 +1245,13 @@ MonoBehaviour:
   chance: 10
   maxLongSeed: 10
   isFirstOpen: 0
-  minEnemies: 1
-  maxEnemies: 4
-  numberEnemies: 0
   insides:
   - {fileID: 4744320690564428626, guid: 97acefb140ec5c24f95b9499ee4192f5, type: 3}
   - {fileID: 4744320690564428626, guid: 6df03641459e3e14f9fcf8f248ab130a, type: 3}
   - {fileID: 4744320690564428626, guid: a292cbb4cf35064468025916231d72cc, type: 3}
   - {fileID: 4744320690564428626, guid: 714c90232bbee124b90160832131ec85, type: 3}
+  bosses:
+  - {fileID: 4744320690564428626, guid: 75c2e087046e8324cb47f17f8b235d38, type: 3}
   roomsLUDR:
   - {fileID: 5773800327734354387, guid: c1a0655dda9e96e409cf61d8ed9b9826, type: 3}
   roomsLUD:

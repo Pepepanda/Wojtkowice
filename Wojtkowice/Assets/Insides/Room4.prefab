@@ -55,8 +55,6 @@ MonoBehaviour:
   minEnemies: 0
   maxEnemies: 3
   enemies:
-  - {fileID: 2282346706396076649, guid: 6f9b386392b157d469d5101a382425a2, type: 3}
-  - {fileID: 4231773959875460767, guid: 1d831afc91901ea49b36fa4cc5535f85, type: 3}
   - {fileID: 7587763005932109726, guid: 5b924ff61a7470141ad3dc7ff411e9dc, type: 3}
   - {fileID: 9114110044729940302, guid: 91ca88139a619594d8d09c9c3582e604, type: 3}
   - {fileID: 9114110044729940302, guid: 91ca88139a619594d8d09c9c3582e604, type: 3}
