@@ -2217,9 +2217,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 10
-  m_WholeNumbers: 0
-  m_Value: 10
+  m_MaxValue: 100
+  m_WholeNumbers: 1
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2568,13 +2568,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3277024511493388472, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.002965629
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277024511493388472, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277024511493388472, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277024511493388472, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.99999565
+      objectReference: {fileID: 0}
     - target: {fileID: 3277024511493388473, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: m_PointLightInnerAngle
-      value: 34.66
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 3277024511493388473, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: m_PointLightOuterAngle
-      value: 34.66
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277024511493388473, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 3277024511537716461, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: m_RootOrder
