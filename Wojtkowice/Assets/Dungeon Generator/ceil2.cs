@@ -5,7 +5,7 @@ using UnityEngine;
 public class ceil2 : MonoBehaviour
 {
     public bool right, left, up, down; 
-    public int beforeX, beforeY;
+    public int beforeX, beforeY, which;
     public bool isActive, isBoss;
     public ceil2()
     {
@@ -15,5 +15,6 @@ public class ceil2 : MonoBehaviour
         down = false;
         isActive = false;
         isBoss = false;
+        which = 0; 
     }
 }
