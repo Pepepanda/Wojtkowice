@@ -1254,6 +1254,7 @@ MonoBehaviour:
   - {fileID: 4744320690564428626, guid: 75c2e087046e8324cb47f17f8b235d38, type: 3}
   numberKey: 0
   key: {fileID: 5082356494416236245, guid: e7736e63a633085438bc0cb9b0b63dba, type: 3}
+  difficulty: 1
   roomsLUDR:
   - {fileID: 5773800327734354387, guid: c1a0655dda9e96e409cf61d8ed9b9826, type: 3}
   roomsLUD:

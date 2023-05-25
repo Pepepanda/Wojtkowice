@@ -50,8 +50,9 @@ public void OnTriggerEnter2D(Collider2D collision)
             }
             if (isBoss)
             {
-                if(!isOpen){
-                    isOpen=true;
+                if(!isOpen)
+                {
+                    isOpen = true; 
                 }
                 if (build.numberKey >= 2)
                 {
@@ -88,7 +89,7 @@ public void OnTriggerEnter2D(Collider2D collision)
         {
             for (int i = 0; i <= transform.childCount - 1; i++)
             {
-                transform.GetChild(i).gameObject.SetActive(false);
+                //transform.GetChild(i).gameObject.SetActive(false);
             }
         }
     }

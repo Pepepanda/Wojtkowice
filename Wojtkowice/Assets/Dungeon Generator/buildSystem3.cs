@@ -24,6 +24,8 @@ public class buildSystem3 : MonoBehaviour
     [SerializeField]
     public GameObject key;
 
+    public int difficulty; 
+
     int numberRoomsLUDR;
     [SerializeField]
     GameObject[] roomsLUDR;
@@ -110,7 +112,7 @@ public class buildSystem3 : MonoBehaviour
 
         createLabirynt();
         activateLabirynt();
-        spawnKeys();
+        spawnKeys(); 
     }
 
     void createLabirynt()
