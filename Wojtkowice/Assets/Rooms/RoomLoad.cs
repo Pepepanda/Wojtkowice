@@ -50,19 +50,14 @@ public class RoomLoad : MonoBehaviour
             }
             if (isBoss)
             {
-                if (isOpen)
+                if(!isOpen)
                 {
-                    if (build.numberKey >= 2)
-                    {
-                        GameObject newInsides = Instantiate(build.bosses[build.random.Next(build.bosses.Length)], new Vector2((build.startx * 18) + (x * 18), (build.starty * 10) + (y * 10)), Quaternion.identity) as GameObject;
-                        newInsides.transform.parent = this.transform;
-                    }
+                    isOpen = true; 
                 }
-                else
+                if (build.numberKey >= 2)
                 {
-                    isOpen = true;
-                    build.numberKey = 0;
-                    build.spawnKeys();
+                    GameObject newInsides = Instantiate(build.bosses[build.random.Next(build.bosses.Length)], new Vector2((build.startx * 18) + (x * 18), (build.starty * 10) + (y * 10)), Quaternion.identity) as GameObject;
+                    newInsides.transform.parent = this.transform;
                 }
             }
             else
@@ -94,7 +89,7 @@ public class RoomLoad : MonoBehaviour
         {
             for (int i = 0; i <= transform.childCount - 1; i++)
             {
-                transform.GetChild(i).gameObject.SetActive(false);
+                //transform.GetChild(i).gameObject.SetActive(false);
             }
         }
     }

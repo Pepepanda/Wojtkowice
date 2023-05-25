@@ -24,6 +24,8 @@ public class buildSystem3 : MonoBehaviour
     [SerializeField]
     public GameObject key;
 
+    public int difficulty; 
+
     int numberRoomsLUDR;
     [SerializeField]
     GameObject[] roomsLUDR;
@@ -109,7 +111,8 @@ public class buildSystem3 : MonoBehaviour
         actualy = starty + widthMinus;
 
         createLabirynt();
-        activateLabirynt(); 
+        activateLabirynt();
+        spawnKeys(); 
     }
 
     void createLabirynt()
@@ -497,7 +500,7 @@ public class buildSystem3 : MonoBehaviour
                 if (ceils[randomX, randomY].isActive && !ceils[randomX, randomY].isBoss)
                 {
                     RoomLoad roomLoad = GameObject.Find("Ceil(" + (randomX - widthMinus) + ", " + (randomY - heightMinus) + ")").GetComponent<RoomLoad>();
-                    if (roomLoad.isOpen && !roomLoad.isBoss)
+                    if (!roomLoad.isBoss)
                     {
                         tabX[spawnedKey] = randomX;
                         tabY[spawnedKey] = randomY;
