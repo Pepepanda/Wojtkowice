@@ -50,6 +50,9 @@ public void OnTriggerEnter2D(Collider2D collision)
             }
             if (isBoss)
             {
+                if(!isOpen){
+                    isOpen=true;
+                }
                 if (build.numberKey >= 2)
                 {
                     GameObject newInsides = Instantiate(build.bosses[build.random.Next(build.bosses.Length)], new Vector2((build.startx * 18) + (x * 18), (build.starty * 10) + (y * 10)), Quaternion.identity) as GameObject;
