@@ -1236,10 +1236,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seed: demo
   isConsoleWrite: 0
-  widthPlus: 3
-  widthMinus: 3
-  heightPlus: 3
-  heightMinus: 3
+  widthPlus: 1
+  widthMinus: 1
+  heightPlus: 1
+  heightMinus: 1
   startx: 0
   starty: 0
   chance: 10
@@ -1252,6 +1252,8 @@ MonoBehaviour:
   - {fileID: 4744320690564428626, guid: 714c90232bbee124b90160832131ec85, type: 3}
   bosses:
   - {fileID: 4744320690564428626, guid: 75c2e087046e8324cb47f17f8b235d38, type: 3}
+  numberKey: 0
+  key: {fileID: 5082356494416236245, guid: e7736e63a633085438bc0cb9b0b63dba, type: 3}
   roomsLUDR:
   - {fileID: 5773800327734354387, guid: c1a0655dda9e96e409cf61d8ed9b9826, type: 3}
   roomsLUD:

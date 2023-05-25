@@ -9,7 +9,6 @@ public class RoomLoad : MonoBehaviour
     public int numberEnemies;
     public int x, y;
 
-    // Start is called before the first frame update
     void Start()
     {
         isOpen = false;
@@ -49,19 +48,31 @@ public class RoomLoad : MonoBehaviour
             {
                 transform.GetChild(i).gameObject.SetActive(true);
             }
-            if (!isOpen)
+            if (isBoss)
             {
-                isOpen = true;
-                if (!build.isFirstOpen)
+                if (isOpen)
                 {
-                    build.isFirstOpen = true;
-                }
-                else
-                {
-                    if (isBoss)
+                    if (build.numberKey >= 2)
                     {
                         GameObject newInsides = Instantiate(build.bosses[build.random.Next(build.bosses.Length)], new Vector2((build.startx * 18) + (x * 18), (build.starty * 10) + (y * 10)), Quaternion.identity) as GameObject;
                         newInsides.transform.parent = this.transform;
+                    }
+                }
+                else
+                {
+                    isOpen = true;
+                    build.numberKey = 0;
+                    build.spawnKeys();
+                }
+            }
+            else
+            {
+                if (!isOpen)
+                {
+                    isOpen = true;
+                    if (!build.isFirstOpen)
+                    {
+                        build.isFirstOpen = true;
                     }
                     else
                     {
