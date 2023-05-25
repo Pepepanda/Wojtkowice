@@ -9,7 +9,6 @@ public class RoomLoad : MonoBehaviour
     public int numberEnemies;
     public int x, y;
 
-    // Start is called before the first frame update
     void Start()
     {
         isOpen = false;
@@ -37,7 +36,7 @@ public class RoomLoad : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
@@ -49,19 +48,22 @@ public class RoomLoad : MonoBehaviour
             {
                 transform.GetChild(i).gameObject.SetActive(true);
             }
-            if (!isOpen)
+            if (isBoss)
             {
-                isOpen = true;
-                if (!build.isFirstOpen)
+                if (build.numberKey >= 2)
                 {
-                    build.isFirstOpen = true;
+                    GameObject newInsides = Instantiate(build.bosses[build.random.Next(build.bosses.Length)], new Vector2((build.startx * 18) + (x * 18), (build.starty * 10) + (y * 10)), Quaternion.identity) as GameObject;
+                    newInsides.transform.parent = this.transform;
                 }
-                else
+            }
+            else
+            {
+                if (!isOpen)
                 {
-                    if (isBoss)
+                    isOpen = true;
+                    if (!build.isFirstOpen)
                     {
-                        GameObject newInsides = Instantiate(build.bosses[build.random.Next(build.bosses.Length)], new Vector2((build.startx * 18) + (x * 18), (build.starty * 10) + (y * 10)), Quaternion.identity) as GameObject;
-                        newInsides.transform.parent = this.transform;
+                        build.isFirstOpen = true;
                     }
                     else
                     {
