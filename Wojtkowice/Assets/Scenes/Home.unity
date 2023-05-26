@@ -2572,6 +2572,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3277024511493388472, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277024511493388472, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.002965629
       objectReference: {fileID: 0}
@@ -2588,6 +2592,10 @@ PrefabInstance:
       value: -0.99999565
       objectReference: {fileID: 0}
     - target: {fileID: 3277024511493388473, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: m_ShadowIntensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277024511493388473, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: m_PointLightInnerAngle
       value: 55
       objectReference: {fileID: 0}
@@ -2598,6 +2606,18 @@ PrefabInstance:
     - target: {fileID: 3277024511493388473, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: m_PointLightOuterRadius
       value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277024511493388473, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: m_ShadowIntensityEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277024511537716458, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: m_Size.x
+      value: 0.54230934
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277024511537716458, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.10434905
       objectReference: {fileID: 0}
     - target: {fileID: 3277024511537716461, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: m_RootOrder
@@ -2651,6 +2671,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 250
       objectReference: {fileID: 0}
+    - target: {fileID: 3277024511537716463, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3277024511537716464, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: DieMenu
       value: 
@@ -2678,6 +2702,14 @@ PrefabInstance:
     - target: {fileID: 3277024511537716467, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417695736448039018, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: m_ShadowIntensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417695736448039018, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: m_ShadowIntensityEnabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
