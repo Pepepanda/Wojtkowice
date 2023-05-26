@@ -11,6 +11,7 @@ public class PlayerSounds : MonoBehaviour
     public AudioClip ShootingAudioClip;
     Rigidbody2D RB2D;
     float x;
+    float y;
 
     void Start()
     {
@@ -23,18 +24,22 @@ public class PlayerSounds : MonoBehaviour
     void Update()
     {
         x = Input.GetAxis("Horizontal") * speed;
-        RB2D.velocity = new Vector2(x, RB2D.velocity.y);
+        y = Input.GetAxis("Vertical") * speed;
+        RB2D.velocity = new Vector2(x,y);
 
-        if (RB2D.velocity.x != 0)
+        if (RB2D.velocity.magnitude > 0)
         {
             if (!WalkingAudioSource.isPlaying)
             {
                 WalkingAudioSource.clip = WalkingAudioClip;
+                WalkingAudioSource.volume = 0.3f;
                 WalkingAudioSource.Play();
+                StartCoroutine(StopWalkingSound());
             }
         }
-        else
+        IEnumerator StopWalkingSound()
         {
+            yield return new WaitForSeconds(1f);
             WalkingAudioSource.Stop();
         }
         if (Input.GetMouseButton(0))
@@ -42,11 +47,14 @@ public class PlayerSounds : MonoBehaviour
             if (!ShootingAudioSource.isPlaying)
             {
                 ShootingAudioSource.clip = ShootingAudioClip;
+                ShootingAudioSource.volume = 0.3f;
                 ShootingAudioSource.Play();
+                StartCoroutine(StopShootingSound());
             }
         }
-        else
+        IEnumerator StopShootingSound()
         {
+            yield return new WaitForSeconds(1f);
             ShootingAudioSource.Stop();
         }
     }
