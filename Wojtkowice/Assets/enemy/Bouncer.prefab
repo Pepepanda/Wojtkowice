@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4216723901541241647}
   - component: {fileID: 4216723901541241641}
   - component: {fileID: 4216723901541241642}
+  - component: {fileID: 7559504413843602216}
   m_Layer: 0
   m_Name: Bouncer
   m_TagString: Enemy
@@ -145,7 +146,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.53
 --- !u!50 &4216723901541241642
 Rigidbody2D:
   serializedVersion: 4
@@ -167,3 +168,42 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7559504413843602216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4216723901541241648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.37038362, y: -0.34705257, z: 0}
+  - {x: -0.46441817, y: -0.20588529, z: 0}
+  - {x: -0.5058954, y: -0.032199144, z: 0}
+  - {x: -0.4773798, y: 0.16741014, z: 0}
+  - {x: -0.3885299, y: 0.32112932, z: 0}
+  - {x: -0.1974082, y: 0.46034312, z: 0}
+  - {x: -0.0003912449, y: 0.4966359, z: 0}
+  - {x: 0.20181036, y: 0.46034312, z: 0}
+  - {x: 0.38853002, y: 0.32631397, z: 0}
+  - {x: 0.47141242, y: 0.16222548, z: 0}
+  - {x: 0.4895587, y: -0.08145356, z: 0}
+  - {x: 0.44289684, y: -0.24477017, z: 0}
+  - {x: 0.33409095, y: -0.36779118, z: 0}
+  - {x: 0.1551485, y: -0.47548747, z: 0}
+  - {x: -0.0081682205, y: -0.5014107, z: 0}
+  - {x: -0.16370797, y: -0.4780798, z: 0}
+  m_ShapePathHash: 1282399257
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 41750

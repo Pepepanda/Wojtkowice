@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7684302025644837752}
   - component: {fileID: -2647767626577965316}
   - component: {fileID: -6286778551631253166}
+  - component: {fileID: 4010955587053312290}
   m_Layer: 0
   m_Name: Teleporter
   m_TagString: Enemy
@@ -135,7 +136,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.05, y: 1.05}
   m_EdgeRadius: 0
 --- !u!114 &1863006733686292020
 MonoBehaviour:
@@ -196,3 +197,36 @@ MonoBehaviour:
   player: {fileID: 0}
   speed: 2000
   cooldown: 2.5
+--- !u!114 &4010955587053312290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7587763005932109726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.43202198, y: -0.4184265, z: 0}
+  - {x: -0.4968346, y: -0.27767324, z: 0}
+  - {x: -0.4954978, y: 0.27101827, z: 0}
+  - {x: -0.43783113, y: 0.40913773, z: 0}
+  - {x: -0.2956008, y: 0.49090493, z: 0}
+  - {x: 0.27660432, y: 0.48840618, z: 0}
+  - {x: 0.43003607, y: 0.41754258, z: 0}
+  - {x: 0.48899487, y: 0.27601576, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: -0.28488046, y: -0.49577117, z: 0}
+  m_ShapePathHash: -370712143
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 41818
