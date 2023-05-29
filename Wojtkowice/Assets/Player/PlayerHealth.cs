@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public int playerHealth;
     public HealthBar healthBar;
     public GameObject DieMenu;
+    public PlayerSounds playerSounds;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,10 @@ public class PlayerHealth : MonoBehaviour
             DieMenu.SetActive(true);
             Destroy(gameObject);
             Time.timeScale = 0f;
+        }
+        else
+        {
+            playerSounds.HitSound();
         }
     }
     public void GetHealth()

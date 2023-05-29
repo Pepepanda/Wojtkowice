@@ -4,35 +4,29 @@ using UnityEngine;
 
 public class PlayerSounds : MonoBehaviour
 {
-    [SerializeField] float speed = 7f;
     AudioSource WalkingAudioSource;
     AudioSource ShootingAudioSource;
     AudioSource HitAudioSource;
-    AudioSource GameOverAudioSource;
     public AudioClip WalkingAudioClip;
     public AudioClip ShootingAudioClip;
     public AudioClip HitAudioClip;
-    public AudioClip GameOverAudioClip;
     Rigidbody2D RB2D;
-    float x;
-    float y;
-    PlayerHealth PlayerCurrentHealth;
+    float x, y;
 
     void Start()
     {
         WalkingAudioSource = GetComponent<AudioSource>();
         ShootingAudioSource = gameObject.AddComponent<AudioSource>();
         HitAudioSource = gameObject.AddComponent<AudioSource>();
-        GameOverAudioSource = gameObject.AddComponent<AudioSource>();
+        /*GameOverAudioSource = gameObject.AddComponent<AudioSource>();*/
         RB2D = GetComponent<Rigidbody2D>();
-        PlayerCurrentHealth = GetComponent<PlayerHealth>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        x = Input.GetAxis("Horizontal") * speed;
-        y = Input.GetAxis("Vertical") * speed;
+        /*x = transform.position.x;
+        y = transform.position.y;
         RB2D.velocity = new Vector2(x, y);
 
         if (RB2D.velocity.magnitude > 0)
@@ -44,59 +38,51 @@ public class PlayerSounds : MonoBehaviour
                 WalkingAudioSource.Play();
                 StartCoroutine(StopWalkingSound());
             }
-        }
-        if (Input.GetMouseButton(0))
+        }*/
+    }
+    public void WalkSound()
+    {
+        if (!WalkingAudioSource.isPlaying)
         {
-            if (!ShootingAudioSource.isPlaying)
-            {
-                ShootingAudioSource.clip = ShootingAudioClip;
-                ShootingAudioSource.volume = 0.3f;
-                ShootingAudioSource.Play();
-                StartCoroutine(StopShootingSound());
-            }
-        }
-        if (PlayerCurrentHealth.playerHealth <= 0)
-        {
-            if (!GameOverAudioSource.isPlaying)
-            {
-                GameOverAudioSource.clip = GameOverAudioClip;
-                GameOverAudioSource.volume = 0.3f;
-                GameOverAudioSource.Play();
-                StartCoroutine(StopGameOverSound());
-            }
+            WalkingAudioSource.clip = WalkingAudioClip;
+            WalkingAudioSource.volume = 0.3f;
+            WalkingAudioSource.Play();
+            /*StartCoroutine(StopWalkingSound());*/
         }
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    public void ShootSound()
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (!ShootingAudioSource.isPlaying)
         {
-            if (!HitAudioSource.isPlaying)
-            {
-                HitAudioSource.clip = HitAudioClip;
-                HitAudioSource.volume = 0.3f;
-                HitAudioSource.Play();
-                StartCoroutine(StopHittingSound());
-            }
+            ShootingAudioSource.clip = ShootingAudioClip;
+            ShootingAudioSource.volume = 0.3f;
+            ShootingAudioSource.Play();
+            StartCoroutine(StopShootingSound());
+        }
+    }
+    public void HitSound()
+    {
+        if (!HitAudioSource.isPlaying)
+        {
+            HitAudioSource.clip = HitAudioClip;
+            HitAudioSource.volume = 0.3f;
+            HitAudioSource.Play();
+            StartCoroutine(StopHittingSound());
         }
     }
     IEnumerator StopWalkingSound()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         WalkingAudioSource.Stop();
     }
     IEnumerator StopShootingSound()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.18f);
         ShootingAudioSource.Stop();
     }
     IEnumerator StopHittingSound()
     {
         yield return new WaitForSeconds(1f);
         HitAudioSource.Stop();
-    }
-    IEnumerator StopGameOverSound()
-    {
-        yield return new WaitForSeconds(1f);
-        GameOverAudioSource.Stop();
     }
 }
