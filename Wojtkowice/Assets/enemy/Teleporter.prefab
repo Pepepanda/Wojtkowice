@@ -168,6 +168,7 @@ MonoBehaviour:
   health: 6
   HealthPrefab: {fileID: 902675856507441310, guid: 22c4a265e8ec5b94a8e767674b090d59, type: 3}
   AmmoPrefab: {fileID: 5397169401303133102, guid: bd922c8d586d7c14c811c0a80dc1e83b, type: 3}
+  build: {fileID: 0}
 --- !u!114 &-2647767626577965316
 MonoBehaviour:
   m_ObjectHideFlags: 0
