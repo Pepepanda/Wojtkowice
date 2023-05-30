@@ -1,6 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public static class StaticClass
+{
+    public static string CrossSceneInformation { get; set; }
+}
 
 public class buildSystem3 : MonoBehaviour
 {
@@ -14,7 +20,9 @@ public class buildSystem3 : MonoBehaviour
     public int startx, starty;
     public int chance, maxLongSeed;
     public bool isFirstOpen;
-    
+    float timer;
+    public float startTimerEasy, startTimerMedium, startTimerHard, minutes, seconds;
+
     [SerializeField]
     public GameObject[] insides;
     [SerializeField]
@@ -76,6 +84,10 @@ public class buildSystem3 : MonoBehaviour
 
     void Awake()
     {
+        if(!string.IsNullOrEmpty(StaticClass.CrossSceneInformation))
+        {
+            seed = StaticClass.CrossSceneInformation;
+        }
         if (string.IsNullOrEmpty(seed))
         {
             int longSeed = rand.Next(2, maxLongSeed), randomNumber;
@@ -109,10 +121,40 @@ public class buildSystem3 : MonoBehaviour
         createEmptyCeils(widthPlus + widthMinus + 1, heightPlus + heightMinus + 1);
         actualx = startx + widthMinus;
         actualy = starty + widthMinus;
+        switch (difficulty)
+        {
+            case 1:
+                timer = startTimerEasy; 
+                break;
+            case 2:
+                timer = startTimerMedium;
+                break;
+            case 3:
+                timer = startTimerHard;
+                break;
+            default:
+                timer = startTimerMedium;
+                break;
+        }
 
         createLabirynt();
         activateLabirynt();
         spawnKeys(); 
+    }
+
+    void Update()
+    {
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            minutes = Mathf.FloorToInt(timer / 60);
+            seconds = Mathf.FloorToInt(timer % 60);
+        }
+        else
+        {
+            StaticClass.CrossSceneInformation = seed;
+            SceneManager.LoadScene("Home");
+        }
     }
 
     void createLabirynt()
