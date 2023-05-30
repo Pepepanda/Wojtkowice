@@ -17,7 +17,7 @@ public class GameOverAudio : MonoBehaviour
         if (!GameOverAudioSource.isPlaying)
         {
             GameOverAudioSource.clip = GameOverAudioClip;
-            GameOverAudioSource.volume = 0.3f;
+            GameOverAudioSource.volume = 0.02f;
             GameOverAudioSource.Play();
             StartCoroutine(StopGameOverSound());
         }
