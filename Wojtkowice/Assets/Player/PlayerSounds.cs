@@ -7,9 +7,15 @@ public class PlayerSounds : MonoBehaviour
     AudioSource WalkingAudioSource;
     AudioSource ShootingAudioSource;
     AudioSource HitAudioSource;
+    AudioSource GetAudioSource;
+    AudioSource HitEnemyAudioSource;
+    AudioSource DieEnemyAudioSource;
     public AudioClip WalkingAudioClip;
     public AudioClip ShootingAudioClip;
     public AudioClip HitAudioClip;
+    public AudioClip GetAudioClip;
+    public AudioClip HitEnemyAudioClip;
+    public AudioClip DieEnemyAudioClip;
     Rigidbody2D RB2D;
     float x, y;
 
@@ -18,6 +24,9 @@ public class PlayerSounds : MonoBehaviour
         WalkingAudioSource = GetComponent<AudioSource>();
         ShootingAudioSource = gameObject.AddComponent<AudioSource>();
         HitAudioSource = gameObject.AddComponent<AudioSource>();
+        GetAudioSource = gameObject.AddComponent<AudioSource>();
+        HitEnemyAudioSource = gameObject.AddComponent<AudioSource>();
+        DieEnemyAudioSource = gameObject.AddComponent<AudioSource>();
         /*GameOverAudioSource = gameObject.AddComponent<AudioSource>();*/
         RB2D = GetComponent<Rigidbody2D>();
     }
@@ -70,6 +79,38 @@ public class PlayerSounds : MonoBehaviour
             StartCoroutine(StopHittingSound());
         }
     }
+    public void GetSound()
+    {
+        if (!GetAudioSource.isPlaying)
+        {
+            GetAudioSource.clip = GetAudioClip;
+            GetAudioSource.volume = 0.3f;
+            GetAudioSource.Play();
+            StartCoroutine(StopGettingSound());
+        }
+    }
+
+    public void HitEnemySound()
+    {
+        if (!HitEnemyAudioSource.isPlaying)
+        {
+            HitEnemyAudioSource.clip = HitEnemyAudioClip;
+            HitEnemyAudioSource.volume = 0.3f;
+            HitEnemyAudioSource.Play();
+            StartCoroutine(StopHittingEnemySound());
+        }
+    }
+
+    public void DieEnemySound()
+    {
+        if (!DieEnemyAudioSource.isPlaying)
+        {
+            DieEnemyAudioSource.clip = DieEnemyAudioClip;
+            DieEnemyAudioSource.volume = 0.3f;
+            DieEnemyAudioSource.Play();
+            StartCoroutine(StopDyingEnemySound());
+        }
+    }
     IEnumerator StopWalkingSound()
     {
         yield return new WaitForSeconds(2f);
@@ -84,5 +125,20 @@ public class PlayerSounds : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         HitAudioSource.Stop();
+    }
+    IEnumerator StopGettingSound()
+    {
+        yield return new WaitForSeconds(1f);
+        GetAudioSource.Stop();
+    }
+    IEnumerator StopHittingEnemySound()
+    {
+        yield return new WaitForSeconds(1.5f);
+        HitEnemyAudioSource.Stop();
+    }
+    IEnumerator StopDyingEnemySound()
+    {
+        yield return new WaitForSeconds(2f);
+        DieEnemyAudioSource.Stop();
     }
 }

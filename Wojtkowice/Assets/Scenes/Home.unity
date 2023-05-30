@@ -2709,6 +2709,10 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2630681166507891349, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3277024511493388472, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.848
@@ -2873,6 +2877,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3277024511537716467, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5417695736448039018, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: m_ShadowIntensity
       value: 1
@@ -2897,6 +2905,10 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9212970909439786434, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: GetAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f8ec5f5f0e0e34141aad0c633799c86d, type: 3}
     - target: {fileID: 9212970909439786434, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: HitAudioClip
       value: 
