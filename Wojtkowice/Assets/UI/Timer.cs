@@ -17,6 +17,13 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer.text= builds3.minutes.ToString()+":"+builds3.seconds.ToString();
+        if (builds3.seconds<10)
+        {
+            timer.text = builds3.minutes.ToString() + ":0" + builds3.seconds.ToString();
+        }
+        else
+        {
+            timer.text = builds3.minutes.ToString() + ":" + builds3.seconds.ToString();
+        }
     }
 }
