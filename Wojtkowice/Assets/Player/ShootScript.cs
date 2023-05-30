@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class ShootScript : MonoBehaviour
 {
@@ -19,12 +20,15 @@ public class ShootScript : MonoBehaviour
     public AmmoBar ammoBar;
     public GameObject DieMenu;
     public PlayerSounds playerSounds;
+    public GameObject fl;
+    public GameObject fl2;
     // Start is called before the first frame update
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         PlayerAmmo = ammo;
         ammoBar.SetAmmo(PlayerAmmo);
+        fl2.SetActive(false);
     }
 
     // Update is called once per frame
@@ -44,8 +48,10 @@ public class ShootScript : MonoBehaviour
                     playerSounds.ShootSound();
                     int subAmmo = Random.Range(1, 4);
                     PlayerAmmo -= subAmmo;
-                    if (PlayerAmmo < 0)
+                    if (PlayerAmmo <= 0)
                     {
+                        fl.SetActive(false);
+                        fl2.SetActive(true);
                         PlayerAmmo = 0;
                     }
                     ammoBar.SetAmmo(PlayerAmmo);
@@ -74,6 +80,8 @@ public class ShootScript : MonoBehaviour
     }
     public void GetAmmo()
     {
+        fl.SetActive(true);
+        fl2.SetActive(false);
         PlayerAmmo = ammo;
         ammoBar.SetAmmo(PlayerAmmo);
         playerSounds.GetSound();
