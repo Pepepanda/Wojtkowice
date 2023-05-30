@@ -1301,7 +1301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa4b061e63030044b9821aa1155e265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seed: demo
+  seed: 
   isConsoleWrite: 0
   widthPlus: 1
   widthMinus: 1
@@ -1312,6 +1312,11 @@ MonoBehaviour:
   chance: 10
   maxLongSeed: 10
   isFirstOpen: 0
+  startTimerEasy: 100
+  startTimerMedium: 50
+  startTimerHard: 10
+  minutes: 0
+  seconds: 0
   insides:
   - {fileID: 4744320690564428626, guid: 97acefb140ec5c24f95b9499ee4192f5, type: 3}
   - {fileID: 4744320690564428626, guid: 6df03641459e3e14f9fcf8f248ab130a, type: 3}
