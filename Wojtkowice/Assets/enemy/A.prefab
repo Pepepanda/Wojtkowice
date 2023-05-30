@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7874397773310379791}
   - component: {fileID: 5035403580732601909}
   - component: {fileID: 1441823006725025106}
+  - component: {fileID: -1435425200652703945}
   m_Layer: 0
   m_Name: A
   m_TagString: Point
@@ -106,3 +107,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-1435425200652703945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104664520905628642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2826d1548bcf9b3418ee8a20b6c949c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3277024511537716467, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+  speed: 2000
+  cooldown: 4

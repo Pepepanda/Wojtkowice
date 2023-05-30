@@ -9,6 +9,7 @@ TagManager:
   - Hand
   - Enemy
   - Point
+  - Key
   layers:
   - Default
   - TransparentFX

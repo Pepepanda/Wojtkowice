@@ -7,7 +7,13 @@ public class EnemyDie : MonoBehaviour
     public int health = 10;
     public GameObject HealthPrefab;
     public GameObject AmmoPrefab;
-    // Start is called before the first frame update
+    public buildSystem3 build;
+
+    void Start()
+    {
+        build = GameObject.Find("Game Manager").GetComponent<buildSystem3>();
+    }
+
     public void TakeDamage(int damage)
     {
         health -= damage;
@@ -20,13 +26,48 @@ public class EnemyDie : MonoBehaviour
     {
         Destroy(gameObject);
         int randomNum = Random.Range(0, 100);
-        if (randomNum <= 10) // 10% ammo chance
+        switch (build.difficulty)
         {
-            Instantiate(AmmoPrefab, transform.position, Quaternion.identity);
-        }
-        else if (randomNum > 10 && randomNum <= 20)// 10% health chance
-        {
-            Instantiate(HealthPrefab, transform.position, Quaternion.identity);
+            case 1:
+                if (randomNum <= 50) // 20% ammo chance
+                {
+                    Instantiate(AmmoPrefab, transform.position, Quaternion.identity);
+                }
+                if (randomNum >= 80)// 40% health chance
+                {
+                    Instantiate(HealthPrefab, transform.position, Quaternion.identity);
+                }
+                break;
+            case 2:
+                if (randomNum <= 20) // 20% ammo chance
+                {
+                    Instantiate(AmmoPrefab, transform.position, Quaternion.identity);
+                }
+                if (randomNum >= 60)// 40% health chance
+                {
+                    Instantiate(HealthPrefab, transform.position, Quaternion.identity);
+                }
+                break;
+            case 3:
+                if (randomNum <= 10) // 20% ammo chance
+                {
+                    Instantiate(AmmoPrefab, transform.position, Quaternion.identity);
+                }
+                if (randomNum >= 40)// 40% health chance
+                {
+                    Instantiate(HealthPrefab, transform.position, Quaternion.identity);
+                }
+                break;
+            default:
+                if (randomNum <= 20) // 20% ammo chance
+                {
+                    Instantiate(AmmoPrefab, transform.position, Quaternion.identity);
+                }
+                if (randomNum >= 60)// 40% health chance
+                {
+                    Instantiate(HealthPrefab, transform.position, Quaternion.identity);
+                }
+                break;
         }
     }
 }

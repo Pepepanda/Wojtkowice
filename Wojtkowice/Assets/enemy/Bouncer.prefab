@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4081765388245312373
+--- !u!1 &4216723901541241648
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,28 +8,14 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< Updated upstream:Wojtkowice/Assets/enemy/Capsule.prefab
-  - component: {fileID: 5887283732434974598}
-  - component: {fileID: 3740618540794782930}
-  - component: {fileID: -4194672309363009758}
-  - component: {fileID: 5629625583776625398}
-  - component: {fileID: 8150320210812385348}
-  - component: {fileID: 4351106849553325178}
-  - component: {fileID: 3240440985713252272}
-  - component: {fileID: -6732181573951816361}
-  - component: {fileID: 1987330560061504040}
-  - component: {fileID: -8504667395090941293}
-  - component: {fileID: 2624119963279035551}
-=======
-  - component: {fileID: 9212398533673410228}
-  - component: {fileID: 2514809525303159250}
-  - component: {fileID: 5045474242848120093}
-  - component: {fileID: 1261114562610754264}
-  - component: {fileID: 4221814558188435202}
-  - component: {fileID: -5955948093966938730}
-  - component: {fileID: 2817021626595351819}
-  - component: {fileID: 1722559812461839412}
->>>>>>> Stashed changes:Wojtkowice/Assets/enemy/Bouncer.prefab
+  - component: {fileID: 4216723901541241643}
+  - component: {fileID: 4216723901541241644}
+  - component: {fileID: 4216723901541241645}
+  - component: {fileID: 4216723901541241646}
+  - component: {fileID: 4216723901541241647}
+  - component: {fileID: 4216723901541241641}
+  - component: {fileID: 4216723901541241642}
+  - component: {fileID: 7559504413843602216}
   m_Layer: 0
   m_Name: Bouncer
   m_TagString: Enemy
@@ -37,28 +23,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &9212398533673410228
+--- !u!4 &4216723901541241643
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4081765388245312373}
+  m_GameObject: {fileID: 4216723901541241648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.4417787, y: 2.0435379, z: 0}
+  m_LocalPosition: {x: 2.3151622, y: 2.1753173, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2514809525303159250
+--- !u!212 &4216723901541241644
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4081765388245312373}
+  m_GameObject: {fileID: 4216723901541241648}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -104,53 +90,54 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5045474242848120093
+--- !u!114 &4216723901541241645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4216723901541241648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b7b7862c8df9445b178165845cf173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4216723901541241646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4216723901541241648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a401253c9ebe7754fb589dcba6e1e673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  playerHealth: {fileID: 0}
+--- !u!114 &4216723901541241647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4216723901541241648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e58c4ac3917db004e895840bec15b89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  HealthPrefab: {fileID: 902675856507441310, guid: 22c4a265e8ec5b94a8e767674b090d59, type: 3}
+  AmmoPrefab: {fileID: 5397169401303133102, guid: bd922c8d586d7c14c811c0a80dc1e83b, type: 3}
+--- !u!58 &4216723901541241641
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream:Wojtkowice/Assets/enemy/Capsule.prefab
-  m_GameObject: {fileID: 4672238118746279157}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80dd38bd55537154797c0787dd0e0a08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  bounceHeight: 0.5
-  bounceDuration: 0.5
---- !u!50 &5629625583776625398
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4672238118746279157}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 0.43052232
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
---- !u!70 &8150320210812385348
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4672238118746279157}
-=======
-  m_GameObject: {fileID: 4081765388245312373}
->>>>>>> Stashed changes:Wojtkowice/Assets/enemy/Bouncer.prefab
+  m_GameObject: {fileID: 4216723901541241648}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -159,15 +146,15 @@ CapsuleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
---- !u!50 &1261114562610754264
+  m_Radius: 0.53
+--- !u!50 &4216723901541241642
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4081765388245312373}
+  m_GameObject: {fileID: 4216723901541241648}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -181,119 +168,42 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4221814558188435202
+--- !u!114 &7559504413843602216
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4081765388245312373}
+  m_GameObject: {fileID: 4216723901541241648}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< Updated upstream:Wojtkowice/Assets/enemy/Capsule.prefab
-  m_Script: {fileID: 11500000, guid: 30d3b4afc4569154dace84ba8006a961, type: 3}
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 3277024511537716467, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
-  szybkosc: 2
-  predkoscPocisku: 2
-  NajlepszyDystansDoWystrzeleniaPocisku: 5
-  firingPoint: {fileID: 1747207045845012472, guid: 8cdd843a4f9300749a5a7a0f30ffefef, type: 3}
-  bulletPrefab: {fileID: 2282346706396076649, guid: 6f9b386392b157d469d5101a382425a2, type: 3}
---- !u!114 &3240440985713252272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4672238118746279157}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-=======
->>>>>>> Stashed changes:Wojtkowice/Assets/enemy/Bouncer.prefab
-  m_Script: {fileID: 11500000, guid: dbea3f58d73b94a4d9fddcbb2efa0edf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-5955948093966938730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4081765388245312373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a401253c9ebe7754fb589dcba6e1e673, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-<<<<<<< Updated upstream:Wojtkowice/Assets/enemy/Capsule.prefab
-  player: {fileID: 0}
---- !u!114 &1987330560061504040
-=======
-  damage: 1
-  playerHealth: {fileID: 3277024511537716464, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
---- !u!114 &2817021626595351819
->>>>>>> Stashed changes:Wojtkowice/Assets/enemy/Bouncer.prefab
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream:Wojtkowice/Assets/enemy/Capsule.prefab
-  m_GameObject: {fileID: 4672238118746279157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dc3252badc229a43986fe16562aeea2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 3277024511537716467, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
-  speed: 2
-  distanceBetween: 4
---- !u!114 &-8504667395090941293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4672238118746279157}
-=======
-  m_GameObject: {fileID: 4081765388245312373}
->>>>>>> Stashed changes:Wojtkowice/Assets/enemy/Bouncer.prefab
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e58c4ac3917db004e895840bec15b89d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10
-  HealthPrefab: {fileID: 902675856507441310, guid: 22c4a265e8ec5b94a8e767674b090d59, type: 3}
-  AmmoPrefab: {fileID: 5397169401303133102, guid: bd922c8d586d7c14c811c0a80dc1e83b, type: 3}
-<<<<<<< Updated upstream:Wojtkowice/Assets/enemy/Capsule.prefab
---- !u!114 &2624119963279035551
-=======
---- !u!114 &1722559812461839412
->>>>>>> Stashed changes:Wojtkowice/Assets/enemy/Bouncer.prefab
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream:Wojtkowice/Assets/enemy/Capsule.prefab
-  m_GameObject: {fileID: 4672238118746279157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a401253c9ebe7754fb589dcba6e1e673, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 2
-  playerHealth: {fileID: 0}
-=======
-  m_GameObject: {fileID: 4081765388245312373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dc3252badc229a43986fe16562aeea2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 3277024511537716467, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
-  speed: 3
-  distanceBetween: 20
->>>>>>> Stashed changes:Wojtkowice/Assets/enemy/Bouncer.prefab
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.37038362, y: -0.34705257, z: 0}
+  - {x: -0.46441817, y: -0.20588529, z: 0}
+  - {x: -0.5058954, y: -0.032199144, z: 0}
+  - {x: -0.4773798, y: 0.16741014, z: 0}
+  - {x: -0.3885299, y: 0.32112932, z: 0}
+  - {x: -0.1974082, y: 0.46034312, z: 0}
+  - {x: -0.0003912449, y: 0.4966359, z: 0}
+  - {x: 0.20181036, y: 0.46034312, z: 0}
+  - {x: 0.38853002, y: 0.32631397, z: 0}
+  - {x: 0.47141242, y: 0.16222548, z: 0}
+  - {x: 0.4895587, y: -0.08145356, z: 0}
+  - {x: 0.44289684, y: -0.24477017, z: 0}
+  - {x: 0.33409095, y: -0.36779118, z: 0}
+  - {x: 0.1551485, y: -0.47548747, z: 0}
+  - {x: -0.0081682205, y: -0.5014107, z: 0}
+  - {x: -0.16370797, y: -0.4780798, z: 0}
+  m_ShapePathHash: 1282399257
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 41750

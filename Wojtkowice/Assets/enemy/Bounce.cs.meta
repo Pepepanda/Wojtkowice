@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Wojtkowice/Assets/enemy/EnemyTeleport.cs.meta
+guid: e1b7b7862c8df9445b178165845cf173
+========
+guid: aad134120aa9d7043b90f7f72796c346
+>>>>>>>> main:Wojtkowice/Assets/enemy/Bounce.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
