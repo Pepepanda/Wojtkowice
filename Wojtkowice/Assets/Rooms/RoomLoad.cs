@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class RoomLoad : MonoBehaviour
 {
-    public bool isOpen, isDestroy, isBoss;
+    public bool isOpen, isDestroy, isBoss, isTimerStart, isTimerEnd, isGenerateTeleport, isBossOpen;
     public buildSystem3 build;
     public int numberEnemies;
     public int x, y;
+    public float timer; 
 
     void Start()
     {
         isOpen = false;
         isDestroy = false;
+        isTimerEnd = false;
+        isTimerStart = false;
+        isGenerateTeleport = false;
+        isBossOpen = false; 
+        timer = 1; 
         build = GameObject.Find("Game Manager").GetComponent<buildSystem3>();
         for (int i = 0; i <= transform.childCount - 1; i++)
         {
@@ -26,9 +32,30 @@ public class RoomLoad : MonoBehaviour
 
     void Update()
     {
-        if(isOpen && numberEnemies <= 0)
+        if (isTimerStart)
+        {
+            if (timer > 0)
+            {
+                timer -= Time.deltaTime;
+            }
+            else
+            {
+                isTimerEnd = true;
+                isTimerStart = false; 
+            }
+        }
+        if (isOpen && numberEnemies <= 0)
         {
             transform.Find("doors").gameObject.SetActive(false);
+            if (isBoss && isTimerEnd)
+            {
+                if(!isGenerateTeleport)
+                {
+                    isGenerateTeleport = true;
+                    GameObject newInsides = Instantiate(build.teleport, new Vector2((build.startx * 18) + (x * 18), (build.starty * 10) + (y * 10)), Quaternion.identity) as GameObject;
+                    newInsides.transform.parent = this.transform;
+                }
+            }
         }
         else if(isOpen && numberEnemies > 0)
         {
@@ -50,14 +77,16 @@ public void OnTriggerEnter2D(Collider2D collision)
             }
             if (isBoss)
             {
-                if(!isOpen)
+                if (!isOpen)
                 {
-                    isOpen = true; 
+                    isOpen = true;
                 }
-                if (build.numberKey >= 2)
+                if (build.numberKey >= 2 && !isBossOpen)
                 {
+                    isBossOpen = true; 
                     GameObject newInsides = Instantiate(build.bosses[build.random.Next(build.bosses.Length)], new Vector2((build.startx * 18) + (x * 18), (build.starty * 10) + (y * 10)), Quaternion.identity) as GameObject;
                     newInsides.transform.parent = this.transform;
+                    isTimerStart = true; 
                 }
             }
             else

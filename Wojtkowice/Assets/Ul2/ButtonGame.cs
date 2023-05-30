@@ -21,6 +21,21 @@ public class ButtonGame : MonoBehaviour
         SceneManager.LoadScene(1);
         Time.timeScale=1f;
     }
+    public void OnClickEasy()
+    {
+        Dificulty.CrossSceneInformation = 1;
+        OnStartButtonClicked();
+    }
+    public void OnClickMedium()
+    {
+        Dificulty.CrossSceneInformation = 2;
+        OnStartButtonClicked();
+    }
+    public void OnClickHard()
+    {
+        Dificulty.CrossSceneInformation = 3;
+        OnStartButtonClicked();
+    }
     public void OnSettingsButtonClicked()
     {
         ClickSound();
