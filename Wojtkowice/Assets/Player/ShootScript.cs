@@ -48,7 +48,7 @@ public class ShootScript : MonoBehaviour
                     playerSounds.ShootSound();
                     int subAmmo = Random.Range(1, 4);
                     PlayerAmmo -= subAmmo;
-                    if (PlayerAmmo < 0)
+                    if (PlayerAmmo <= 0)
                     {
                         fl.SetActive(false);
                         fl2.SetActive(true);

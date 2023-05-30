@@ -8,7 +8,7 @@ public class bullet : MonoBehaviour
     public ShootingScript script;
     private void Start()
     {
-        
+        script = GameObject.Find("Player").GetComponent<ShootingScript>();
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
