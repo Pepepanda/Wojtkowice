@@ -8,13 +8,19 @@ public static class StaticClass
     public static string CrossSceneInformation { get; set; }
 }
 
+public static class Dificulty
+{
+    public static int CrossSceneInformation { get; set; }
+}
+
 public class buildSystem3 : MonoBehaviour
 {
 
     private System.Random rand = new System.Random();
     public System.Random random;
     public string seed;
-    public bool isConsoleWrite; 
+    public bool isConsoleWrite;
+    public int widthPlusEasy, widthPlusMedium, widthPlusHard, widthMinusEasy, widthMinusMedium, widthMinusHard, heightPlusEasy, heightPlusMedium, heightPlusHard, heightMinusEasy, heightMinusMedium, heightMinusHard; 
     public int widthPlus, widthMinus, heightPlus, heightMinus;
     private int actualx, actualy;
     public int startx, starty;
@@ -24,6 +30,11 @@ public class buildSystem3 : MonoBehaviour
     public float startTimerEasy, startTimerMedium, startTimerHard, minutes, seconds;
 
     [SerializeField]
+    public GameObject[] insidesEasy;
+    [SerializeField]
+    public GameObject[] insidesMedium;
+    [SerializeField]
+    public GameObject[] insidesHard;
     public GameObject[] insides;
     [SerializeField]
     public GameObject[] bosses;
@@ -89,6 +100,10 @@ public class buildSystem3 : MonoBehaviour
         {
             seed = StaticClass.CrossSceneInformation;
         }
+        if (Dificulty.CrossSceneInformation > 0 && Dificulty.CrossSceneInformation < 4)
+        {
+            difficulty = Dificulty.CrossSceneInformation;
+        }
         if (string.IsNullOrEmpty(seed))
         {
             int longSeed = rand.Next(2, maxLongSeed), randomNumber;
@@ -99,6 +114,42 @@ public class buildSystem3 : MonoBehaviour
                 current = (char)randomNumber;
                 seed += current;
             }
+        }
+
+        switch (difficulty)
+        {
+            case 1:
+                timer = startTimerEasy;
+                widthPlus = widthPlusEasy;
+                widthMinus = widthMinusEasy;
+                heightPlus = heightPlusEasy;
+                heightMinus = heightMinusEasy;
+                insides = insidesEasy; 
+                break;
+            case 2:
+                timer = startTimerMedium;
+                widthPlus = widthPlusMedium;
+                widthMinus = widthMinusMedium;
+                heightPlus = heightPlusMedium;
+                heightMinus = heightMinusMedium;
+                insides = insidesMedium;
+                break;
+            case 3:
+                timer = startTimerHard;
+                widthPlus = widthPlusHard;
+                widthMinus = widthMinusHard;
+                heightPlus = heightPlusHard;
+                heightMinus = heightMinusHard;
+                insides = insidesHard;
+                break;
+            default:
+                timer = startTimerMedium;
+                widthPlus = widthPlusMedium;
+                widthMinus = widthMinusMedium;
+                heightPlus = heightPlusMedium;
+                heightMinus = heightMinusMedium;
+                insides = insidesMedium;
+                break;
         }
 
         isFirstOpen = false; 
@@ -122,21 +173,6 @@ public class buildSystem3 : MonoBehaviour
         createEmptyCeils(widthPlus + widthMinus + 1, heightPlus + heightMinus + 1);
         actualx = startx + widthMinus;
         actualy = starty + widthMinus;
-        switch (difficulty)
-        {
-            case 1:
-                timer = startTimerEasy; 
-                break;
-            case 2:
-                timer = startTimerMedium;
-                break;
-            case 3:
-                timer = startTimerHard;
-                break;
-            default:
-                timer = startTimerMedium;
-                break;
-        }
 
         createLabirynt();
         activateLabirynt();

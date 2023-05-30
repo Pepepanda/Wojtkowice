@@ -277,7 +277,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 347058635}
         m_TargetAssemblyTypeName: ButtonGame, Assembly-CSharp
-        m_MethodName: OnStartButtonClicked
+        m_MethodName: OnClickMedium
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -495,7 +495,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 347058635}
         m_TargetAssemblyTypeName: ButtonGame, Assembly-CSharp
-        m_MethodName: OnSettingsButtonClicked
+        m_MethodName: OnClickEasy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1616,7 +1616,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 347058635}
         m_TargetAssemblyTypeName: ButtonGame, Assembly-CSharp
-        m_MethodName: OnSettingsButtonClicked
+        m_MethodName: OnClickHard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
