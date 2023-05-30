@@ -890,6 +890,14 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7006000150456110907, guid: 0122f28de45a18944a8664193dc061b4, type: 3}
+      propertyPath: m_Size.x
+      value: 3.4502683
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006000150456110907, guid: 0122f28de45a18944a8664193dc061b4, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.2983859
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0122f28de45a18944a8664193dc061b4, type: 3}
 --- !u!4 &2030775935750589729 stripped
@@ -1087,6 +1095,14 @@ PrefabInstance:
     - target: {fileID: 6368430888163418223, guid: 2b9624aeddaefd84282531dec30f082d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7589815044029429062, guid: 2b9624aeddaefd84282531dec30f082d, type: 3}
+      propertyPath: m_Size.x
+      value: 3.4632926
+      objectReference: {fileID: 0}
+    - target: {fileID: 7589815044029429062, guid: 2b9624aeddaefd84282531dec30f082d, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.259917
       objectReference: {fileID: 0}
     - target: {fileID: 7921972384582638769, guid: 2b9624aeddaefd84282531dec30f082d, type: 3}
       propertyPath: m_RootOrder

@@ -16,7 +16,7 @@ public class RoomLoad : MonoBehaviour
         build = GameObject.Find("Game Manager").GetComponent<buildSystem3>();
         for (int i = 0; i <= transform.childCount - 1; i++)
         {
-            //transform.GetChild(i).gameObject.SetActive(false);
+            transform.GetChild(i).gameObject.SetActive(false);
         }
         numberEnemies = 0;
         string nazwaGameObjectu = transform.gameObject.name;
@@ -89,7 +89,7 @@ public void OnTriggerEnter2D(Collider2D collision)
         {
             for (int i = 0; i <= transform.childCount - 1; i++)
             {
-                //transform.GetChild(i).gameObject.SetActive(false);
+                transform.GetChild(i).gameObject.SetActive(false);
             }
         }
     }

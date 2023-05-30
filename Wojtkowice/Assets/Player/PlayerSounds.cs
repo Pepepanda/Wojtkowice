@@ -16,8 +16,6 @@ public class PlayerSounds : MonoBehaviour
     public AudioClip GetAudioClip;
     public AudioClip HitEnemyAudioClip;
     public AudioClip DieEnemyAudioClip;
-    Rigidbody2D RB2D;
-    float x, y;
 
     void Start()
     {
@@ -27,27 +25,6 @@ public class PlayerSounds : MonoBehaviour
         GetAudioSource = gameObject.AddComponent<AudioSource>();
         HitEnemyAudioSource = gameObject.AddComponent<AudioSource>();
         DieEnemyAudioSource = gameObject.AddComponent<AudioSource>();
-        /*GameOverAudioSource = gameObject.AddComponent<AudioSource>();*/
-        RB2D = GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        /*x = transform.position.x;
-        y = transform.position.y;
-        RB2D.velocity = new Vector2(x, y);
-
-        if (RB2D.velocity.magnitude > 0)
-        {
-            if (!WalkingAudioSource.isPlaying)
-            {
-                WalkingAudioSource.clip = WalkingAudioClip;
-                WalkingAudioSource.volume = 0.3f;
-                WalkingAudioSource.Play();
-                StartCoroutine(StopWalkingSound());
-            }
-        }*/
     }
     public void WalkSound()
     {
@@ -81,13 +58,9 @@ public class PlayerSounds : MonoBehaviour
     }
     public void GetSound()
     {
-        if (!GetAudioSource.isPlaying)
-        {
             GetAudioSource.clip = GetAudioClip;
             GetAudioSource.volume = 0.3f;
             GetAudioSource.Play();
-            StartCoroutine(StopGettingSound());
-        }
     }
 
     public void HitEnemySound()
@@ -125,11 +98,6 @@ public class PlayerSounds : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         HitAudioSource.Stop();
-    }
-    IEnumerator StopGettingSound()
-    {
-        yield return new WaitForSeconds(1f);
-        GetAudioSource.Stop();
     }
     IEnumerator StopHittingEnemySound()
     {
