@@ -2867,7 +2867,7 @@ PrefabInstance:
       objectReference: {fileID: 1785467381}
     - target: {fileID: 3277024511537716465, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: BetweenFiring
-      value: 0.25
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3277024511537716467, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: m_Name

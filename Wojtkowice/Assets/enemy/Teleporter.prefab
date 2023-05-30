@@ -197,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   speed: 2000
-  cooldown: 2.5
+  cooldown: 1.7
 --- !u!114 &4010955587053312290
 MonoBehaviour:
   m_ObjectHideFlags: 0
