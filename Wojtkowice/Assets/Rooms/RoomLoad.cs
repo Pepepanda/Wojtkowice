@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoomLoad : MonoBehaviour
 {
-    public bool isOpen, isDestroy, isBoss, isTimerStart, isTimerEnd;
+    public bool isOpen, isDestroy, isBoss, isTimerStart, isTimerEnd, isGenerateTeleport, isBossOpen;
     public buildSystem3 build;
     public int numberEnemies;
     public int x, y;
@@ -16,6 +16,8 @@ public class RoomLoad : MonoBehaviour
         isDestroy = false;
         isTimerEnd = false;
         isTimerStart = false;
+        isGenerateTeleport = false;
+        isBossOpen = false; 
         timer = 1; 
         build = GameObject.Find("Game Manager").GetComponent<buildSystem3>();
         for (int i = 0; i <= transform.childCount - 1; i++)
@@ -47,7 +49,12 @@ public class RoomLoad : MonoBehaviour
             transform.Find("doors").gameObject.SetActive(false);
             if (isBoss && isTimerEnd)
             {
-                UnityEngine.Debug.Log("Wygrałeś");
+                if(!isGenerateTeleport)
+                {
+                    isGenerateTeleport = true;
+                    GameObject newInsides = Instantiate(build.teleport, new Vector2((build.startx * 18) + (x * 18), (build.starty * 10) + (y * 10)), Quaternion.identity) as GameObject;
+                    newInsides.transform.parent = this.transform;
+                }
             }
         }
         else if(isOpen && numberEnemies > 0)
@@ -70,12 +77,13 @@ public void OnTriggerEnter2D(Collider2D collision)
             }
             if (isBoss)
             {
-                if(!isOpen)
+                if (!isOpen)
                 {
-                    isOpen = true; 
+                    isOpen = true;
                 }
-                if (build.numberKey >= 2)
+                if (build.numberKey >= 2 && !isBossOpen)
                 {
+                    isBossOpen = true; 
                     GameObject newInsides = Instantiate(build.bosses[build.random.Next(build.bosses.Length)], new Vector2((build.startx * 18) + (x * 18), (build.starty * 10) + (y * 10)), Quaternion.identity) as GameObject;
                     newInsides.transform.parent = this.transform;
                     isTimerStart = true; 

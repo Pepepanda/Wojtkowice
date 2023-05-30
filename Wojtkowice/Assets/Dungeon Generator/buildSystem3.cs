@@ -31,6 +31,7 @@ public class buildSystem3 : MonoBehaviour
     public int numberKey;
     [SerializeField]
     public GameObject key;
+    public GameObject teleport;
 
     public int difficulty; 
 
