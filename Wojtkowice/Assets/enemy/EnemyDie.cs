@@ -13,6 +13,7 @@ public class EnemyDie : MonoBehaviour
     void Start()
     {
         build = GameObject.Find("Game Manager").GetComponent<buildSystem3>();
+        playerSounds = GameObject.Find("Player").GetComponent<PlayerSounds>();
     }
 
     public void TakeDamage(int damage)
