@@ -1509,7 +1509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa4b061e63030044b9821aa1155e265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seed: demo
+  seed: 
   isConsoleWrite: 0
   widthPlusEasy: 1
   widthPlusMedium: 2
