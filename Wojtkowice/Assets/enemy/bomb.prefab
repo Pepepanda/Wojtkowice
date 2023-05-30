@@ -136,3 +136,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c288332f48cdd79468e7ccbf0504950d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bomba: {fileID: 2958932917750321959}
+  wielkoscEksplozji: 3.5
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  obrazenia: 5
+  sekundy: 3

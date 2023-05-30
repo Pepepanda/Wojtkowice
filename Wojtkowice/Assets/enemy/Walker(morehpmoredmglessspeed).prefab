@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8317266174019833628}
   - component: {fileID: -8717275397792632135}
   - component: {fileID: 2528849661829235054}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Walker(morehpmoredmglessspeed)
   m_TagString: Enemy
   m_Icon: {fileID: 0}

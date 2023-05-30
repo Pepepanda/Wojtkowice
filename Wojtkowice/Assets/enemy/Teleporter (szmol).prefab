@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8651921837567889082}
   - component: {fileID: 833184048760107284}
   - component: {fileID: 1511299168009263460}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Teleporter (szmol)
   m_TagString: Enemy
   m_Icon: {fileID: 0}

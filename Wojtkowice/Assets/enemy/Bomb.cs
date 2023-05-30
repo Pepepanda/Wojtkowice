@@ -4,51 +4,52 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    public float explosionRadius = 5f;
-    public float explosionDamage = 10f;
-    public float explosionDelay = 2f;
+    public Transform bomba;
+    public float wielkoscEksplozji;
+    public LayerMask enemyLayers;
+    public int obrazenia;
+    float timer;
+    public int sekundy;
 
-    private bool exploded = false;
 
-
-    void Start()
+    /*private void Start()
     {
-    
+        StartCoroutine(CountdownToStart());
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    void Explode()
     {
-        if (collision.gameObject.CompareTag("Enemy") && !exploded)
+        Collider[] uderz = Physics2D.OverlapCircleAll(bomba.position, wielkoscEksplozji, enemyLayers);
+        foreach(Collider2D enemy in uderz)
         {
-            exploded = true;
-            StartCoroutine(Explode());
+            enemy.GetComponent<EnemyDie>().TakeDamage(obrazenia);
+        }
+        foreach (Collider2D player in uderz)
+        {
+            player.GetComponent<PlayerHealth>().TakeDamage(obrazenia);
         }
     }
-
-    private IEnumerator Explode()
+    void Update()
     {
-        yield return new WaitForSeconds(explosionDelay);
+        
+    }
 
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
-        foreach (Collider2D collider in colliders)
+    void OnDrawGizmosSelected()
+    {
+        if(bomba == null)
         {
-            if (collider.CompareTag("Enemy"))
-            {
-                Enemy enemy = collider.GetComponent<Enemy>();
-                enemy.TakeDamage(explosionDamage);
-            }
-            else if (collider.CompareTag("Player"))
-            {
-                Player player = collider.GetComponent<Player>();
-                player.TakeDamage(explosionDamage);
-            }
+            return;
         }
 
-        Destroy(gameObject);
+        Gizmos.DrawWireSphere(bomba.position, wielkoscEksplozji);
     }
-
-    private void OnDrawGizmosSelected()
+    IEnumerator CountdownToStart()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, explosionRadius);
-    }
+        while (timer > 0)
+        {
+            yield return new WaitForSeconds(sekundy);
+            timer--;
+            Explode();
+            
+        }
+    }*/
 }

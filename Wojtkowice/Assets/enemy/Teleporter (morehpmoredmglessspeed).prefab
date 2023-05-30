@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 598067778205054351}
   - component: {fileID: 8920819498172746273}
   - component: {fileID: 7251983963506352721}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Teleporter (morehpmoredmglessspeed)
   m_TagString: Enemy
   m_Icon: {fileID: 0}

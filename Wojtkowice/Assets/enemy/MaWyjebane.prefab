@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -6613502406311677026}
   - component: {fileID: 2181732020700810189}
   - component: {fileID: -8015815994910663837}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MaWyjebane
   m_TagString: Enemy
   m_Icon: {fileID: 0}
