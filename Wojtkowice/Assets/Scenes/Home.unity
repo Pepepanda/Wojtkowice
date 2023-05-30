@@ -2206,6 +2206,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1018391147}
     m_Modifications:
+    - target: {fileID: 2639979117646165460, guid: de0caa4b05ff59a4690647cb13018f64, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2639979117646165462, guid: de0caa4b05ff59a4690647cb13018f64, type: 3}
       propertyPath: m_Name
       value: WoodMenu
