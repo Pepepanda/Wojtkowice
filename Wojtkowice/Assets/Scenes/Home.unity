@@ -1301,9 +1301,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa4b061e63030044b9821aa1155e265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seed: 
+  seed: demo
   isConsoleWrite: 0
-  widthPlus: 1
+  widthPlus: 0
   widthMinus: 1
   heightPlus: 1
   heightMinus: 1
@@ -1323,7 +1323,7 @@ MonoBehaviour:
   - {fileID: 4744320690564428626, guid: a292cbb4cf35064468025916231d72cc, type: 3}
   - {fileID: 4744320690564428626, guid: 714c90232bbee124b90160832131ec85, type: 3}
   bosses:
-  - {fileID: 4744320690564428626, guid: 75c2e087046e8324cb47f17f8b235d38, type: 3}
+  - {fileID: 4744320690564428626, guid: a292cbb4cf35064468025916231d72cc, type: 3}
   numberKey: 0
   key: {fileID: 5082356494416236245, guid: e7736e63a633085438bc0cb9b0b63dba, type: 3}
   difficulty: 1
