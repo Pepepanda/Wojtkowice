@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1720037300404495706}
   - component: {fileID: 5116432854993683254}
   - component: {fileID: 9114110044729940301}
+  - component: {fileID: 2017450641392817175}
   m_Layer: 0
   m_Name: Walker
   m_TagString: Enemy
@@ -151,6 +152,8 @@ MonoBehaviour:
   health: 10
   HealthPrefab: {fileID: 902675856507441310, guid: 22c4a265e8ec5b94a8e767674b090d59, type: 3}
   AmmoPrefab: {fileID: 5397169401303133102, guid: bd922c8d586d7c14c811c0a80dc1e83b, type: 3}
+  build: {fileID: 0}
+  playerSounds: {fileID: 0}
 --- !u!114 &5116432854993683254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,3 +183,30 @@ MonoBehaviour:
   player: {fileID: 3277024511537716467, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
   speed: 2
   distanceBetween: 20
+--- !u!114 &2017450641392817175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9114110044729940302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.5000001, y: -0.5, z: 0}
+  - {x: -0.5000001, y: 0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  m_ShapePathHash: 0
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -5554

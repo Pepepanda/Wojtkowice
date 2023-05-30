@@ -6,6 +6,9 @@ public class ShootScript : MonoBehaviour
 {
     private Camera mainCam;
     private Vector2 mousePos;
+    public bool CanFire;
+    public float Timer;
+    public float BetweenFiring;
     public Transform Gun;
     public Transform ShootPoint;
     public GameObject Bullet;
@@ -15,6 +18,7 @@ public class ShootScript : MonoBehaviour
     public int PlayerAmmo;
     public AmmoBar ammoBar;
     public GameObject DieMenu;
+    public PlayerSounds playerSounds;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,11 +35,13 @@ public class ShootScript : MonoBehaviour
         FaceMouse();
         if (!DieMenu.activeSelf)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && CanFire)
             {
                 if (PlayerAmmo != 0)
                 {
+                    CanFire = false;
                     Shoot();
+                    playerSounds.ShootSound();
                     int subAmmo = Random.Range(1, 4);
                     PlayerAmmo -= subAmmo;
                     if (PlayerAmmo < 0)
@@ -44,6 +50,15 @@ public class ShootScript : MonoBehaviour
                     }
                     ammoBar.SetAmmo(PlayerAmmo);
                 }
+            }
+        }
+        if (!CanFire)
+        {
+            Timer+=Time.deltaTime;
+            if(Timer > BetweenFiring)
+            {
+                CanFire = true;
+                Timer = 0;
             }
         }
     }
@@ -61,5 +76,6 @@ public class ShootScript : MonoBehaviour
     {
         PlayerAmmo = ammo;
         ammoBar.SetAmmo(PlayerAmmo);
+        playerSounds.GetSound();
     }
 }

@@ -7,11 +7,13 @@ using UnityEngine;
 
 public class Movment : MonoBehaviour
 {
-  private Camera mainCam;
-  public float speed = 5f;
-  bool facingRight=true;
-  public GameObject Hand1;
-  public GameObject Hand2;
+    private Camera mainCam;
+    public float speed = 5f;
+    bool facingRight=true;
+    public GameObject Hand1;
+    public GameObject Hand2;
+    public PlayerSounds playerSounds;
+
 
     void Start()
     {
@@ -24,17 +26,21 @@ public class Movment : MonoBehaviour
 
           if(Input.GetKey("w")){
              pos.y += speed * Time.deltaTime;
+            playerSounds.WalkSound();
           }
           else if(Input.GetKey("s")){
              pos.y -= speed * Time.deltaTime;
-          }
+            playerSounds.WalkSound();
+        }
 
           if(Input.GetKey("d")){
              pos.x += speed * Time.deltaTime;
-          }
+            playerSounds.WalkSound();
+        }
           else if(Input.GetKey("a")){
              pos.x -= speed * Time.deltaTime;
-          }
+            playerSounds.WalkSound();
+        }
           Vector3 mousePos=Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (mousePos.x > transform.position.x && facingRight)
         {
