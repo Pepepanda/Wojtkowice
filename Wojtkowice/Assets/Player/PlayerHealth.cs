@@ -41,5 +41,6 @@ public class PlayerHealth : MonoBehaviour
             playerHealth = 20;
         }
         healthBar.SetHealth(playerHealth);
+        playerSounds.GetSound();
     }
 }

@@ -8,6 +8,7 @@ public class EnemyDie : MonoBehaviour
     public GameObject HealthPrefab;
     public GameObject AmmoPrefab;
     public buildSystem3 build;
+    public PlayerSounds playerSounds;
 
     void Start()
     {
@@ -19,12 +20,16 @@ public class EnemyDie : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
+            playerSounds.DieEnemySound();
             Die();
+        }
+        else
+        {
+            playerSounds.HitEnemySound();
         }
     }
     void Die()
     {
-        Destroy(gameObject);
         int randomNum = Random.Range(0, 100);
         switch (build.difficulty)
         {
@@ -69,5 +74,6 @@ public class EnemyDie : MonoBehaviour
                 }
                 break;
         }
+        Destroy(gameObject);
     }
 }
