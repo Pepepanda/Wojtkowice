@@ -72,7 +72,7 @@ public class ButtonGame : MonoBehaviour
             ClickAudioSource.clip = ClickAudioClip;
             ClickAudioSource.volume = 0.3f;
             ClickAudioSource.Play();
-            StartCoroutine(StopClickingSound());
+            /*StartCoroutine(StopClickingSound());*/
         }
     }
     IEnumerator StopClickingSound()
