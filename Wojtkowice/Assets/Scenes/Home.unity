@@ -688,6 +688,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &343761525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6306362542742437210, guid: 8dcce74adc2306343936ef7ca44331bb, type: 3}
+  m_PrefabInstance: {fileID: 6306362542240474282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &375211592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1509,7 +1514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa4b061e63030044b9821aa1155e265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seed: demo
+  seed: 
   isConsoleWrite: 0
   widthPlusEasy: 1
   widthPlusMedium: 2
@@ -2018,7 +2023,7 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.15
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.980577, b: 0.7971698, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
@@ -3268,6 +3273,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3277024511537716464, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: UI
+      value: 
+      objectReference: {fileID: 343761525}
+    - target: {fileID: 3277024511537716464, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: DieMenu
       value: 
       objectReference: {fileID: 1018391143}
@@ -3279,6 +3288,10 @@ PrefabInstance:
       propertyPath: freezeGame
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3277024511537716464, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 1171503892}
     - target: {fileID: 3277024511537716464, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: playerSounds
       value: 
