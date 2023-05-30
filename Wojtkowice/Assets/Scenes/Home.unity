@@ -378,7 +378,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0.00012207031, y: 0}
   m_SizeDelta: {x: 200, y: 80}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &265783913
@@ -1535,12 +1535,15 @@ MonoBehaviour:
   insidesEasy:
   - {fileID: 4744320690564428626, guid: 714c90232bbee124b90160832131ec85, type: 3}
   - {fileID: 4744320690564428626, guid: 6df03641459e3e14f9fcf8f248ab130a, type: 3}
+  - {fileID: 4744320690564428626, guid: ad740cea755fec1439d03d0a4cbdf910, type: 3}
   insidesMedium:
   - {fileID: 4744320690564428626, guid: a292cbb4cf35064468025916231d72cc, type: 3}
+  - {fileID: 4744320690564428626, guid: 8644edf5cabb38c4d8b3232be8f16e74, type: 3}
   - {fileID: 4744320690564428626, guid: 6df03641459e3e14f9fcf8f248ab130a, type: 3}
   insidesHard:
   - {fileID: 4744320690564428626, guid: 97acefb140ec5c24f95b9499ee4192f5, type: 3}
   - {fileID: 4744320690564428626, guid: a292cbb4cf35064468025916231d72cc, type: 3}
+  - {fileID: 4744320690564428626, guid: 8644edf5cabb38c4d8b3232be8f16e74, type: 3}
   insides: []
   bosses:
   - {fileID: 4744320690564428626, guid: a292cbb4cf35064468025916231d72cc, type: 3}
