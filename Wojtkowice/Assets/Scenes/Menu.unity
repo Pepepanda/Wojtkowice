@@ -666,6 +666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mm: {fileID: 569081105}
   dm: {fileID: 541657904}
+  ClickAudioClip: {fileID: 8300000, guid: ecfdf8fe90a2124488e4a2e878ee3d41, type: 3}
 --- !u!1 &541657904
 GameObject:
   m_ObjectHideFlags: 0
