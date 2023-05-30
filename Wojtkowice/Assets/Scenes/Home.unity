@@ -378,7 +378,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.00012207031, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 80}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &265783913
@@ -1549,9 +1549,18 @@ MonoBehaviour:
   - {fileID: 4744320690564428626, guid: 97acefb140ec5c24f95b9499ee4192f5, type: 3}
   - {fileID: 4744320690564428626, guid: a292cbb4cf35064468025916231d72cc, type: 3}
   - {fileID: 4744320690564428626, guid: 8644edf5cabb38c4d8b3232be8f16e74, type: 3}
+  - {fileID: 4744320690564428626, guid: f89ce4d85c8e9fb4fabc7fe2f1c8ab96, type: 3}
+  - {fileID: 4744320690564428626, guid: a292cbb4cf35064468025916231d72cc, type: 3}
+  insidesMedium:
+  - {fileID: 4744320690564428626, guid: f89ce4d85c8e9fb4fabc7fe2f1c8ab96, type: 3}
+  - {fileID: 4744320690564428626, guid: 97acefb140ec5c24f95b9499ee4192f5, type: 3}
+  insidesHard:
+  - {fileID: 4744320690564428626, guid: 97acefb140ec5c24f95b9499ee4192f5, type: 3}
+  - {fileID: 4744320690564428626, guid: 8c2f64c9505537f4ca18c21b1709b5b5, type: 3}
+  - {fileID: 4744320690564428626, guid: 34936f08fa74f964ea03d5d0e8e4ad0a, type: 3}
   insides: []
   bosses:
-  - {fileID: 4744320690564428626, guid: a292cbb4cf35064468025916231d72cc, type: 3}
+  - {fileID: 4744320690564428626, guid: 75c2e087046e8324cb47f17f8b235d38, type: 3}
   numberKey: 0
   key: {fileID: 5082356494416236245, guid: e7736e63a633085438bc0cb9b0b63dba, type: 3}
   teleport: {fileID: 9117487980662666615, guid: 50290294884d90f4a9a3a22e88117990, type: 3}
@@ -2084,6 +2093,11 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &1752549604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3277024511493388475, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+  m_PrefabInstance: {fileID: 3277024511440812574}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1785467381 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9212970909439786434, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
@@ -3288,6 +3302,14 @@ PrefabInstance:
       propertyPath: GameOverAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 6e9fe9ce1e27b284c87827afc2941d2e, type: 3}
+    - target: {fileID: 3277024511537716465, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: fl
+      value: 
+      objectReference: {fileID: 1752549604}
+    - target: {fileID: 3277024511537716465, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: fl2
+      value: 
+      objectReference: {fileID: 1732017142}
     - target: {fileID: 3277024511537716465, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: ammo
       value: 100
