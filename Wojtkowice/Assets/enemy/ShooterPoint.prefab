@@ -18,7 +18,9 @@ GameObject:
   - component: {fileID: 7681031599564696564}
   - component: {fileID: 5107809674448844933}
   - component: {fileID: -7898738356568888451}
-  m_Layer: 0
+  - component: {fileID: -5160283911711708284}
+  - component: {fileID: 5047944866567423906}
+  m_Layer: 7
   m_Name: ShooterPoint
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -163,7 +165,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8857537586759237588}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30d3b4afc4569154dace84ba8006a961, type: 3}
   m_Name: 
@@ -379,8 +381,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  HealthPrefab: {fileID: 0}
-  AmmoPrefab: {fileID: 0}
+  HealthPrefab: {fileID: 902675856507441310, guid: 22c4a265e8ec5b94a8e767674b090d59, type: 3}
+  AmmoPrefab: {fileID: 5397169401303133102, guid: bd922c8d586d7c14c811c0a80dc1e83b, type: 3}
   build: {fileID: 0}
   playerSounds: {fileID: -7898738356568888451}
 --- !u!114 &-7898738356568888451
@@ -401,3 +403,47 @@ MonoBehaviour:
   GetAudioClip: {fileID: 0}
   HitEnemyAudioClip: {fileID: 8300000, guid: f8c6f44f9dab72f418ee30ceefd6c15c, type: 3}
   DieEnemyAudioClip: {fileID: 8300000, guid: a2eebd230c5d01d4d8caf58492cdd194, type: 3}
+--- !u!114 &-5160283911711708284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8857537586759237588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c302b90409c1ee409c89705b44b1e13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  stoppingDistance: 3
+  retreatDistance: 5
+  startTimeBtwShots: 2
+  projectile: {fileID: 2282346706396076649, guid: 6f9b386392b157d469d5101a382425a2, type: 3}
+--- !u!114 &5047944866567423906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8857537586759237588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000cb92c1b8
+  m_ShapePath:
+  - {x: -0.5, y: -0.28866667, z: 0}
+  - {x: -0.5, y: 0.71133333, z: 0}
+  - {x: 0.5, y: 0.71133333, z: 0}
+  - {x: 0.5, y: -0.28866667, z: 0}
+  m_ShapePathHash: 0
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -49924
