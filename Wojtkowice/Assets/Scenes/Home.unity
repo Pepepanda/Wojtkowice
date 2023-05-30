@@ -2082,6 +2082,11 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &1752549604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3277024511493388475, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+  m_PrefabInstance: {fileID: 3277024511440812574}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1785467381 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9212970909439786434, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
@@ -3286,6 +3291,14 @@ PrefabInstance:
       propertyPath: GameOverAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 6e9fe9ce1e27b284c87827afc2941d2e, type: 3}
+    - target: {fileID: 3277024511537716465, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: fl
+      value: 
+      objectReference: {fileID: 1752549604}
+    - target: {fileID: 3277024511537716465, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: fl2
+      value: 
+      objectReference: {fileID: 1732017142}
     - target: {fileID: 3277024511537716465, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: ammo
       value: 100
