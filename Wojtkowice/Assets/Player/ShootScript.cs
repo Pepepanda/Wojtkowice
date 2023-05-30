@@ -76,5 +76,6 @@ public class ShootScript : MonoBehaviour
     {
         PlayerAmmo = ammo;
         ammoBar.SetAmmo(PlayerAmmo);
+        playerSounds.GetSound();
     }
 }
