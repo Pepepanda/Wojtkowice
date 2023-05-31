@@ -31,7 +31,7 @@ public class PlayerSounds : MonoBehaviour
         if (!WalkingAudioSource.isPlaying)
         {
             WalkingAudioSource.clip = WalkingAudioClip;
-            WalkingAudioSource.volume = 0.3f;
+            WalkingAudioSource.volume = 1.5f;
             WalkingAudioSource.Play();
             /*StartCoroutine(StopWalkingSound());*/
         }
