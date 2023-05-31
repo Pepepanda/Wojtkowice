@@ -1723,7 +1723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa4b061e63030044b9821aa1155e265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seed: makapaka
+  seed: 
   isConsoleWrite: 0
   widthPlusEasy: 2
   widthPlusMedium: 4
@@ -1748,7 +1748,7 @@ MonoBehaviour:
   isFirstOpen: 0
   startTimerEasy: 500
   startTimerMedium: 400
-  startTimerHard: 300
+  startTimerHard: 20
   minutes: 0
   seconds: 0
   insidesEasy:
