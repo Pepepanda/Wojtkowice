@@ -1556,13 +1556,6 @@ MonoBehaviour:
   - {fileID: 4744320690564428626, guid: 8644edf5cabb38c4d8b3232be8f16e74, type: 3}
   - {fileID: 4744320690564428626, guid: f89ce4d85c8e9fb4fabc7fe2f1c8ab96, type: 3}
   - {fileID: 4744320690564428626, guid: a292cbb4cf35064468025916231d72cc, type: 3}
-  insidesMedium:
-  - {fileID: 4744320690564428626, guid: f89ce4d85c8e9fb4fabc7fe2f1c8ab96, type: 3}
-  - {fileID: 4744320690564428626, guid: 97acefb140ec5c24f95b9499ee4192f5, type: 3}
-  insidesHard:
-  - {fileID: 4744320690564428626, guid: 97acefb140ec5c24f95b9499ee4192f5, type: 3}
-  - {fileID: 4744320690564428626, guid: 8c2f64c9505537f4ca18c21b1709b5b5, type: 3}
-  - {fileID: 4744320690564428626, guid: 34936f08fa74f964ea03d5d0e8e4ad0a, type: 3}
   insides: []
   bosses:
   - {fileID: 4744320690564428626, guid: 75c2e087046e8324cb47f17f8b235d38, type: 3}
