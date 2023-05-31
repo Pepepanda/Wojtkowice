@@ -13,7 +13,7 @@ public class Movment : MonoBehaviour
     public GameObject Hand1;
     public GameObject Hand2;
     public PlayerSounds playerSounds;
-
+    bool isWalking; 
 
     void Start()
     {
@@ -22,26 +22,40 @@ public class Movment : MonoBehaviour
 
     void Update()
     {
-          Vector2 pos = transform.position;
-
-          if(Input.GetKey("w")){
-             pos.y += speed * Time.deltaTime;
-            playerSounds.WalkSound();
-          }
-          else if(Input.GetKey("s")){
-             pos.y -= speed * Time.deltaTime;
-            playerSounds.WalkSound();
+        Vector2 pos = transform.position;
+        isWalking = false; 
+        if (Input.GetKey("w"))
+        {
+            pos.y += speed * Time.deltaTime;
+            isWalking = true; 
+        }
+        else if (Input.GetKey("s"))
+        {
+            pos.y -= speed * Time.deltaTime;
+            isWalking = true;
         }
 
-          if(Input.GetKey("d")){
-             pos.x += speed * Time.deltaTime;
+        if (Input.GetKey("d"))
+        {
+            pos.x += speed * Time.deltaTime;
+            isWalking = true;
+        }
+        else if (Input.GetKey("a"))
+        {
+            pos.x -= speed * Time.deltaTime;
+            isWalking = true;
+        }
+
+        if(isWalking)
+        {
             playerSounds.WalkSound();
         }
-          else if(Input.GetKey("a")){
-             pos.x -= speed * Time.deltaTime;
-            playerSounds.WalkSound();
+        else
+        {
+            StartCoroutine(playerSounds.StopWalkingSound());
         }
-          Vector3 mousePos=Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (mousePos.x > transform.position.x && facingRight)
         {
             flip();
