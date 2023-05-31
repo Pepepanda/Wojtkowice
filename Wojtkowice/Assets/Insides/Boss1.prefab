@@ -52,8 +52,8 @@ MonoBehaviour:
   x: 0
   y: 0
   isOpen: 0
-  minEnemies: 15
-  maxEnemies: 25
+  minEnemies: 0
+  maxEnemies: 0
   enemies:
   - {fileID: 7587763005932109726, guid: 5b924ff61a7470141ad3dc7ff411e9dc, type: 3}
   - {fileID: 7587763005932109726, guid: 5b924ff61a7470141ad3dc7ff411e9dc, type: 3}

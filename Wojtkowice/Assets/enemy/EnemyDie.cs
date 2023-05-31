@@ -35,7 +35,27 @@ public class EnemyDie : MonoBehaviour
         switch (build.difficulty)
         {
             case 1:
-                if (randomNum <= 50)
+                if (randomNum <= 40)
+                {
+                    Instantiate(AmmoPrefab, transform.position, Quaternion.identity);
+                }
+                if (randomNum >= 60)
+                {
+                    Instantiate(HealthPrefab, transform.position, Quaternion.identity);
+                }
+                break;
+            case 2:
+                if (randomNum <= 30)
+                {
+                    Instantiate(AmmoPrefab, transform.position, Quaternion.identity);
+                }
+                if (randomNum >= 70)
+                {
+                    Instantiate(HealthPrefab, transform.position, Quaternion.identity);
+                }
+                break;
+            case 3:
+                if (randomNum <= 20)
                 {
                     Instantiate(AmmoPrefab, transform.position, Quaternion.identity);
                 }
@@ -44,32 +64,12 @@ public class EnemyDie : MonoBehaviour
                     Instantiate(HealthPrefab, transform.position, Quaternion.identity);
                 }
                 break;
-            case 2:
-                if (randomNum <= 20)
-                {
-                    Instantiate(AmmoPrefab, transform.position, Quaternion.identity);
-                }
-                if (randomNum >= 60)
-                {
-                    Instantiate(HealthPrefab, transform.position, Quaternion.identity);
-                }
-                break;
-            case 3:
-                if (randomNum <= 10)
-                {
-                    Instantiate(AmmoPrefab, transform.position, Quaternion.identity);
-                }
-                if (randomNum >= 40)
-                {
-                    Instantiate(HealthPrefab, transform.position, Quaternion.identity);
-                }
-                break;
             default:
-                if (randomNum <= 20)
+                if (randomNum <= 30)
                 {
                     Instantiate(AmmoPrefab, transform.position, Quaternion.identity);
                 }
-                if (randomNum >= 60)
+                if (randomNum >= 70)
                 {
                     Instantiate(HealthPrefab, transform.position, Quaternion.identity);
                 }
