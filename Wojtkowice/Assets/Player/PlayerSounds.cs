@@ -84,9 +84,9 @@ public class PlayerSounds : MonoBehaviour
             StartCoroutine(StopDyingEnemySound());
         }
     }
-    IEnumerator StopWalkingSound()
+    public IEnumerator StopWalkingSound()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.1f);
         WalkingAudioSource.Stop();
     }
     IEnumerator StopShootingSound()

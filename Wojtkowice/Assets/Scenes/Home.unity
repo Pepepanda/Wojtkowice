@@ -888,6 +888,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2639979117646165463, guid: de0caa4b05ff59a4690647cb13018f64, type: 3}
   m_PrefabInstance: {fileID: 1787755405}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &819282442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3277024511493388475, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+  m_PrefabInstance: {fileID: 3277024511440812574}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &924255573
 GameObject:
   m_ObjectHideFlags: 0
@@ -3287,6 +3292,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 6e9fe9ce1e27b284c87827afc2941d2e, type: 3}
     - target: {fileID: 3277024511537716465, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: fl
+      value: 
+      objectReference: {fileID: 819282442}
+    - target: {fileID: 3277024511537716465, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
+      propertyPath: fl2
+      value: 
+      objectReference: {fileID: 1732017142}
+    - target: {fileID: 3277024511537716465, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: ammo
       value: 100
       objectReference: {fileID: 0}
@@ -3361,7 +3374,7 @@ PrefabInstance:
     - target: {fileID: 9212970909439786434, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: WalkingAudioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 76e082b73111f4f408d4ffbe5aa5359c, type: 3}
+      objectReference: {fileID: 8300000, guid: db3f408ad0df14740a94f2d41dc85116, type: 3}
     - target: {fileID: 9212970909439786434, guid: a18dd4e83eac8a345bee6494eca767ee, type: 3}
       propertyPath: DieEnemyAudioClip
       value: 
