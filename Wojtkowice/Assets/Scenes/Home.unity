@@ -1620,7 +1620,7 @@ MonoBehaviour:
   - {fileID: 4744320690564428626, guid: 3a0e07b891777e9468c8a794918de9e5, type: 3}
   insides: []
   bosses:
-  - {fileID: 4744320690564428626, guid: 75c2e087046e8324cb47f17f8b235d38, type: 3}
+  - {fileID: 1082288871616588791, guid: f2b796cdbdf79694993b41d3234e50bf, type: 3}
   numberKey: 0
   key: {fileID: 5082356494416236245, guid: e7736e63a633085438bc0cb9b0b63dba, type: 3}
   teleport: {fileID: 9117487980662666615, guid: 50290294884d90f4a9a3a22e88117990, type: 3}
