@@ -22,6 +22,7 @@ public class ShootScript : MonoBehaviour
     public PlayerSounds playerSounds;
     public GameObject fl;
     public GameObject fl2;
+    public int bateries; 
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,7 @@ public class ShootScript : MonoBehaviour
         PlayerAmmo = ammo;
         ammoBar.SetAmmo(PlayerAmmo);
         fl2.SetActive(false);
+        bateries = 0; 
     }
 
     // Update is called once per frame
@@ -67,6 +69,15 @@ public class ShootScript : MonoBehaviour
                 Timer = 0;
             }
         }
+
+        if(Input.GetKey("r"))
+        {
+            if(bateries > 0 && PlayerAmmo < ammo)
+            {
+                bateries -= 1;
+                GetAmmo(); 
+            }
+        }
     }
     void FaceMouse()
     {
@@ -82,8 +93,15 @@ public class ShootScript : MonoBehaviour
     {
         fl.SetActive(true);
         fl2.SetActive(false);
-        PlayerAmmo = ammo;
-        ammoBar.SetAmmo(PlayerAmmo);
+        if (PlayerAmmo == ammo)
+        {
+            bateries++; 
+        }
+        else
+        {
+            PlayerAmmo = ammo;
+            ammoBar.SetAmmo(PlayerAmmo);
+        }
         playerSounds.GetSound();
     }
 }
