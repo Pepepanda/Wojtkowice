@@ -6,6 +6,6 @@ public class szafy : MonoBehaviour
 {
     void Awake()
     {
-        transform.SetParent(gameObject.transform.parent.parent); 
+        transform.SetParent(GameObject.Find("Szafy").transform); 
     }
 }
