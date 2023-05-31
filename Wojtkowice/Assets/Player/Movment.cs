@@ -13,7 +13,7 @@ public class Movment : MonoBehaviour
     public GameObject Hand1;
     public GameObject Hand2;
     public PlayerSounds playerSounds;
-    bool isWalking; 
+    bool isWalking;
 
     void Start()
     {
